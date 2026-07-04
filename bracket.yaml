@@ -142,32 +142,32 @@ round_of_16:
 quarterfinals:
   - id: QF-1          # M97
     date: 2026-07-09
-    kickoff_et: null  # TBD
+    kickoff_et: "16:00"
     venue: boston
     home: { winner: R16-1 }   # Canada/Morocco
     away: { winner: R16-2 }   # Paraguay/France
-    prediction: null
+    prediction: { winner: France, p: 0.73 }   # Morocco vs France
   - id: QF-2          # M99
     date: 2026-07-11
-    kickoff_et: null
+    kickoff_et: "17:00"
     venue: miami
     home: { winner: R16-3 }   # Brazil/Norway
     away: { winner: R16-4 }   # Mexico/England
-    prediction: null
+    prediction: { winner: England, p: 0.56 }   # Brazil vs England (England高地負荷で接戦)
   - id: QF-3          # M98
     date: 2026-07-10
-    kickoff_et: null
+    kickoff_et: "15:00"
     venue: los_angeles
     home: { winner: R16-5 }   # Spain/Portugal
     away: { winner: R16-6 }   # Belgium/USA
-    prediction: null
+    prediction: { winner: Spain, p: 0.61 }   # Spain vs USA (USAホームでも地力差)
   - id: QF-4          # M100
     date: 2026-07-11
-    kickoff_et: null
+    kickoff_et: "21:00"
     venue: kansas_city
     home: { winner: R16-7 }   # Egypt/Argentina
     away: { winner: R16-8 }   # Switzerland/Colombia
-    prediction: null
+    prediction: { winner: Argentina, p: 0.66 }   # Argentina vs Switzerland
 
 # ---------------------------------------------------------------------------
 # 準決勝 (2026-07-14 〜 07-15) — 両会場とも開閉式屋根+空調
@@ -176,18 +176,18 @@ quarterfinals:
 semifinals:
   - id: SF-1          # M101
     date: 2026-07-14
-    kickoff_et: null
+    kickoff_et: "15:00"
     venue: arlington
     home: { winner: QF-1 }    # Boston QF勝者
     away: { winner: QF-3 }    # Los Angeles QF勝者
-    prediction: null
+    prediction: { winner: France, p: 0.56 }   # France vs Spain (Spainの移動10,376kmが重い)
   - id: SF-2          # M102
     date: 2026-07-15
-    kickoff_et: null
+    kickoff_et: "15:00"
     venue: atlanta
     home: { winner: QF-2 }    # Miami QF勝者
     away: { winner: QF-4 }    # Kansas City QF勝者
-    prediction: null
+    prediction: { winner: England, p: 0.54 }   # England vs Argentina (England疲労最大で僅差)
 
 # ---------------------------------------------------------------------------
 # 決勝 (2026-07-19, New Jersey / MetLife Stadium) — 屋外・空調なし
