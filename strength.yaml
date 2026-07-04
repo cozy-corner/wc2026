@@ -1,0 +1,55 @@
+# 各チームの地力指標 — 全48チーム
+# market_value_eur_m: Transfermarkt スカッド総市場価値 (百万ユーロ)
+#   as of 2026-07-01 (planetfootball経由, givemesportとクロスチェック済み)
+# team名は bracket.yaml / group_stage.yaml と統一。
+# ※ Elo等の追加指標は後日ここに列を足す想定。
+
+strength:
+  France:                  { market_value_eur_m: 1520.0 }
+  England:                 { market_value_eur_m: 1360.0 }
+  Spain:                   { market_value_eur_m: 1220.0 }
+  Portugal:                { market_value_eur_m: 1010.0 }
+  Germany:                 { market_value_eur_m: 947.0 }
+  Brazil:                  { market_value_eur_m: 928.2 }
+  Argentina:               { market_value_eur_m: 807.5 }
+  Netherlands:             { market_value_eur_m: 754.2 }
+  Norway:                  { market_value_eur_m: 589.9 }
+  Belgium:                 { market_value_eur_m: 547.5 }
+  Ivory Coast:             { market_value_eur_m: 522.1 }
+  Senegal:                 { market_value_eur_m: 478.1 }
+  Türkiye:                 { market_value_eur_m: 473.7 }
+  Morocco:                 { market_value_eur_m: 447.7 }
+  Sweden:                  { market_value_eur_m: 406.08 }
+  Croatia:                 { market_value_eur_m: 387.3 }
+  USA:                     { market_value_eur_m: 385.6 }
+  Ecuador:                 { market_value_eur_m: 368.7 }
+  Uruguay:                 { market_value_eur_m: 359.3 }
+  Switzerland:             { market_value_eur_m: 332.5 }
+  Colombia:                { market_value_eur_m: 302.35 }
+  Japan:                   { market_value_eur_m: 270.85 }
+  Algeria:                 { market_value_eur_m: 256.9 }
+  Austria:                 { market_value_eur_m: 245.2 }
+  Ghana:                   { market_value_eur_m: 234.5 }
+  Canada:                  { market_value_eur_m: 198.65 }
+  Mexico:                  { market_value_eur_m: 191.85 }
+  Czech Republic:          { market_value_eur_m: 188.18 }
+  Scotland:                { market_value_eur_m: 170.25 }
+  Paraguay:                { market_value_eur_m: 153.65 }
+  Bosnia and Herzegovina:  { market_value_eur_m: 146.4 }
+  DR Congo:                { market_value_eur_m: 143.9 }
+  South Korea:             { market_value_eur_m: 139.05 }
+  Egypt:                   { market_value_eur_m: 116.48 }
+  Uzbekistan:              { market_value_eur_m: 85.33 }
+  Australia:               { market_value_eur_m: 77.45 }
+  Tunisia:                 { market_value_eur_m: 69.95 }
+  Haiti:                   { market_value_eur_m: 55.9 }
+  Cape Verde:              { market_value_eur_m: 49.25 }
+  South Africa:            { market_value_eur_m: 49.25 }
+  Saudi Arabia:            { market_value_eur_m: 40.68 }
+  Panama:                  { market_value_eur_m: 34.55 }
+  New Zealand:             { market_value_eur_m: 34.45 }
+  Iran:                    { market_value_eur_m: 32.05 }
+  Curaçao:                 { market_value_eur_m: 25.78 }
+  Iraq:                    { market_value_eur_m: 21.2 }
+  Jordan:                  { market_value_eur_m: 20.3 }
+  Qatar:                   { market_value_eur_m: 19.93 }
