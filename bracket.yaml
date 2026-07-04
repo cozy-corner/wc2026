@@ -77,7 +77,7 @@ round_of_16:
     venue: houston
     home: Canada
     away: Morocco
-    prediction: null   # 勝者予想をここに入れる
+    prediction: { winner: Morocco, p: 0.65 }   # 地力+疲労+ホーム(Canadaは非ホーム)
 
   - id: R16-2
     date: 2026-07-04
@@ -85,7 +85,7 @@ round_of_16:
     venue: philadelphia
     home: Paraguay
     away: France
-    prediction: null
+    prediction: { winner: France, p: 0.85 }   # 地力9.9倍
 
   - id: R16-3
     date: 2026-07-05
@@ -93,7 +93,7 @@ round_of_16:
     venue: new_jersey
     home: Brazil
     away: Norway
-    prediction: null
+    prediction: { winner: Brazil, p: 0.58 }
 
   - id: R16-4
     date: 2026-07-05
@@ -101,7 +101,7 @@ round_of_16:
     venue: mexico_city
     home: Mexico
     away: England
-    prediction: null
+    prediction: { winner: England, p: 0.66 }   # Mexicoにホーム+高地補正で80→66に縮小
 
   - id: R16-5
     date: 2026-07-06
@@ -109,7 +109,7 @@ round_of_16:
     venue: arlington
     home: Spain
     away: Portugal
-    prediction: null
+    prediction: { winner: Spain, p: 0.52 }   # 地力互角+Spainの疲労重くほぼ五分
 
   - id: R16-6
     date: 2026-07-06
@@ -117,7 +117,7 @@ round_of_16:
     venue: seattle
     home: Belgium
     away: USA
-    prediction: null
+    prediction: { winner: USA, p: 0.53 }   # USAホームでBelgiumを逆転
 
   - id: R16-7
     date: 2026-07-07
@@ -125,7 +125,7 @@ round_of_16:
     venue: atlanta
     home: Egypt
     away: Argentina
-    prediction: null
+    prediction: { winner: Argentina, p: 0.81 }   # 地力6.9倍+疲労も少
 
   - id: R16-8
     date: 2026-07-07
@@ -133,7 +133,7 @@ round_of_16:
     venue: vancouver
     home: Switzerland
     away: Colombia
-    prediction: null
+    prediction: { winner: Switzerland, p: 0.56 }   # 地力互角+Colombia疲労最大で逆転
 
 # ---------------------------------------------------------------------------
 # 準々決勝 (2026-07-09 〜 07-11) — 会場・日程はFIFA日程で確定済み
