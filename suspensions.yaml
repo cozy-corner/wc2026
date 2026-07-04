@@ -1,0 +1,15 @@
+# 出場停止 (事実) — 公式カード記録に基づく。
+# 2026はグループ終了後にイエロー累積がリセットされるため、
+# R16の出場停止は「R32でのレッド」でのみ発生する(累積では起きない)。
+# 出典: FIFA/Wikipedia 公式試合レポート (R32全16試合を確認)。
+#
+# R32全体でレッドは2枚のみ。うち進出チームの選手はBalogun(USA)のみ。
+#   misses: 出場停止となる試合id (bracket.yaml)
+#   role: starter=先発常連(実効戦力) / squad=控え
+
+suspensions:
+  - player: Folarin Balogun
+    team: USA
+    role: starter
+    reason: red_card         # R32 vs Bosnia 64' ストレートレッド
+    misses: R16-6            # Belgium vs USA

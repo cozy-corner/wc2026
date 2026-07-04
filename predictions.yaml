@@ -13,17 +13,22 @@
 # バージョン: ラウンドが進む/モデルを変えるたびに version を +1 し、
 #   as_of・stage・確定済み予想を更新する。過去世代は git 履歴で辿れる。
 meta:
-  version: 1
+  version: 2
   as_of: 2026-07-04        # この予想を立てた時点
   stage: pre-R16           # 未消化の最初のラウンド(この時点でR16はまだ)
   model:
-    axes: [market_value, fatigue, home]
+    axes: [market_value, fatigue, home, suspension]
     lambda: 0.6            # 疲労の重み(ln-value単位)
     T: 1.3                # ロジスティック温度
     home: 0.45            # 自国会場ボーナス
     home_alt: 0.5         # ホーム×高地(>1500m)追加
-    note: R16以降は延長なし前提
+    suspension: 0.20      # 主力先発の出場停止1枚あたりの減点
+    note: R16以降は延長なし前提。怪我は非採用(公式データ不在)、出場停止のみ採用(公式カード)。
+  inputs: [bracket.yaml, group_stage.yaml, strength.yaml, suspensions.yaml]
   scripts: [predict_r16.py, predict_qf.py, predict_sf.py, predict_final.py]
+  changelog:
+    - "v1: 地力+疲労+ホームでR16〜優勝を予想"
+    - "v2: R32公式レッドに基づきBalogun(USA)のR16-6出場停止を反映(-0.20)。R16-6 USA→Belgium、QF-3がSpain vs Belgiumに。SF/決勝(France優勝)は不変。"
 
 predictions:
   # --- R16 (実カード) ---
@@ -32,15 +37,15 @@ predictions:
   R16-3: { winner: Brazil,      p: 0.58 }   # Brazil vs Norway
   R16-4: { winner: England,     p: 0.66 }   # Mexico vs England (Mexicoにホーム+高地補正)
   R16-5: { winner: Spain,       p: 0.52 }   # Spain vs Portugal (疲労でほぼ五分)
-  R16-6: { winner: USA,         p: 0.53 }   # Belgium vs USA (USAホームで逆転)
+  R16-6: { winner: Belgium,     p: 0.51 }   # Belgium vs USA (USAホーム逆転をBalogun出場停止が相殺)
   R16-7: { winner: Argentina,   p: 0.81 }   # Egypt vs Argentina
   R16-8: { winner: Switzerland, p: 0.56 }   # Switzerland vs Colombia (Colombia疲労最大で逆転)
 
   # --- QF (予想カード) ---
   QF-1: { winner: France,    p: 0.73 }   # Morocco vs France
   QF-2: { winner: England,   p: 0.56 }   # Brazil vs England (England高地負荷で接戦)
-  QF-3: { winner: Spain,     p: 0.61 }   # Spain vs USA (USAホームでも地力差)
-  QF-4: { winner: Argentina, p: 0.66 }   # Argentina vs Switzerland
+  QF-3: { winner: Spain,     p: 0.64 }   # Spain vs Belgium (R16-6がBalogun停止でBelgiumに)
+  QF-4: { winner: Argentina, p: 0.67 }   # Argentina vs Switzerland
 
   # --- SF (予想カード) ---
   SF-1: { winner: France,  p: 0.56 }   # France vs Spain (Spainの移動10,376kmが重い)
