@@ -49,22 +49,22 @@ venues:
 #   days_to_R16: この試合日からR16初戦までの日数間隔 (真の休養日数 = この値-1)
 # ---------------------------------------------------------------------------
 round_of_32:
-  - { id: R32-1,  date: 2026-06-28, venue: los_angeles, teams: [Canada, South Africa],           score: "1-0",            decided_by: regulation, minutes: 90,  winner: Canada,      days_to_R16: 6 }
-  - { id: R32-2,  date: 2026-06-29, venue: houston,     teams: [Brazil, Japan],                  score: "2-1",            decided_by: regulation, minutes: 90,  winner: Brazil,      days_to_R16: 6 }
-  - { id: R32-3,  date: 2026-06-29, venue: boston,      teams: [Paraguay, Germany],              score: "1-1 (pens 4-3)", decided_by: penalties,  minutes: 120, winner: Paraguay,    days_to_R16: 5 }
-  - { id: R32-4,  date: 2026-06-29, venue: monterrey,   teams: [Morocco, Netherlands],           score: "1-1 (pens 3-2)", decided_by: penalties,  minutes: 120, winner: Morocco,     days_to_R16: 5 }
-  - { id: R32-5,  date: 2026-06-30, venue: arlington,   teams: [Norway, Ivory Coast],            score: "2-1",            decided_by: regulation, minutes: 90,  winner: Norway,      days_to_R16: 5 }
-  - { id: R32-6,  date: 2026-06-30, venue: new_jersey,  teams: [France, Sweden],                 score: "3-0",            decided_by: regulation, minutes: 90,  winner: France,      days_to_R16: 4 }
-  - { id: R32-7,  date: 2026-06-30, venue: mexico_city, teams: [Mexico, Ecuador],                score: "2-0",            decided_by: regulation, minutes: 90,  winner: Mexico,      days_to_R16: 5 }
-  - { id: R32-8,  date: 2026-07-01, venue: atlanta,     teams: [England, DR Congo],              score: "2-1",            decided_by: regulation, minutes: 90,  winner: England,     days_to_R16: 4 }
-  - { id: R32-9,  date: 2026-07-01, venue: seattle,     teams: [Belgium, Senegal],               score: "3-2",            decided_by: extra_time, minutes: 120, winner: Belgium,     days_to_R16: 5 }
-  - { id: R32-10, date: 2026-07-01, venue: santa_clara, teams: [USA, Bosnia and Herzegovina],    score: "2-0",            decided_by: regulation, minutes: 90,  winner: USA,         days_to_R16: 5 }
-  - { id: R32-11, date: 2026-07-02, venue: los_angeles, teams: [Spain, Austria],                 score: "3-0",            decided_by: regulation, minutes: 90,  winner: Spain,       days_to_R16: 4 }
-  - { id: R32-12, date: 2026-07-02, venue: toronto,     teams: [Portugal, Croatia],              score: "2-1",            decided_by: regulation, minutes: 90,  winner: Portugal,    days_to_R16: 4 }
-  - { id: R32-13, date: 2026-07-02, venue: vancouver,   teams: [Switzerland, Algeria],           score: "2-0",            decided_by: regulation, minutes: 90,  winner: Switzerland, days_to_R16: 5 }
-  - { id: R32-14, date: 2026-07-03, venue: arlington,   teams: [Egypt, Australia],               score: "0-0 (pens 4-2)", decided_by: penalties,  minutes: 120, winner: Egypt,       days_to_R16: 4 }
-  - { id: R32-15, date: 2026-07-03, venue: miami,       teams: [Argentina, Cape Verde],          score: "3-2",            decided_by: extra_time, minutes: 120, winner: Argentina,   days_to_R16: 4 }
-  - { id: R32-16, date: 2026-07-03, venue: kansas_city, teams: [Colombia, Ghana],                score: "1-0",            decided_by: regulation, minutes: 90,  winner: Colombia,    days_to_R16: 4 }
+  - { id: R32-1,  date: 2026-06-28, venue: los_angeles, teams: [Canada, South Africa], kickoff_local: "12:00",           score: "1-0",            decided_by: regulation, minutes: 90,  winner: Canada,      days_to_R16: 6 }
+  - { id: R32-2,  date: 2026-06-29, venue: houston,     teams: [Brazil, Japan], kickoff_local: "12:00",                  score: "2-1",            decided_by: regulation, minutes: 90,  winner: Brazil,      days_to_R16: 6 }
+  - { id: R32-3,  date: 2026-06-29, venue: boston,      teams: [Paraguay, Germany], kickoff_local: "16:30",              score: "1-1 (pens 4-3)", decided_by: penalties,  minutes: 120, winner: Paraguay,    days_to_R16: 5 }
+  - { id: R32-4,  date: 2026-06-29, venue: monterrey,   teams: [Morocco, Netherlands], kickoff_local: "19:00",           score: "1-1 (pens 3-2)", decided_by: penalties,  minutes: 120, winner: Morocco,     days_to_R16: 5 }
+  - { id: R32-5,  date: 2026-06-30, venue: arlington,   teams: [Norway, Ivory Coast], kickoff_local: "12:00",            score: "2-1",            decided_by: regulation, minutes: 90,  winner: Norway,      days_to_R16: 5 }
+  - { id: R32-6,  date: 2026-06-30, venue: new_jersey,  teams: [France, Sweden], kickoff_local: "17:00",                 score: "3-0",            decided_by: regulation, minutes: 90,  winner: France,      days_to_R16: 4 }
+  - { id: R32-7,  date: 2026-06-30, venue: mexico_city, teams: [Mexico, Ecuador], kickoff_local: "19:00",                score: "2-0",            decided_by: regulation, minutes: 90,  winner: Mexico,      days_to_R16: 5 }
+  - { id: R32-8,  date: 2026-07-01, venue: atlanta,     teams: [England, DR Congo], kickoff_local: "12:00",              score: "2-1",            decided_by: regulation, minutes: 90,  winner: England,     days_to_R16: 4 }
+  - { id: R32-9,  date: 2026-07-01, venue: seattle,     teams: [Belgium, Senegal], kickoff_local: "13:00",               score: "3-2",            decided_by: extra_time, minutes: 120, winner: Belgium,     days_to_R16: 5 }
+  - { id: R32-10, date: 2026-07-01, venue: santa_clara, teams: [USA, Bosnia and Herzegovina], kickoff_local: "17:00",    score: "2-0",            decided_by: regulation, minutes: 90,  winner: USA,         days_to_R16: 5 }
+  - { id: R32-11, date: 2026-07-02, venue: los_angeles, teams: [Spain, Austria], kickoff_local: "12:00",                 score: "3-0",            decided_by: regulation, minutes: 90,  winner: Spain,       days_to_R16: 4 }
+  - { id: R32-12, date: 2026-07-02, venue: toronto,     teams: [Portugal, Croatia], kickoff_local: "19:00",              score: "2-1",            decided_by: regulation, minutes: 90,  winner: Portugal,    days_to_R16: 4 }
+  - { id: R32-13, date: 2026-07-02, venue: vancouver,   teams: [Switzerland, Algeria], kickoff_local: "20:00",           score: "2-0",            decided_by: regulation, minutes: 90,  winner: Switzerland, days_to_R16: 5 }
+  - { id: R32-14, date: 2026-07-03, venue: arlington,   teams: [Egypt, Australia], kickoff_local: "13:00",               score: "0-0 (pens 4-2)", decided_by: penalties,  minutes: 120, winner: Egypt,       days_to_R16: 4 }
+  - { id: R32-15, date: 2026-07-03, venue: miami,       teams: [Argentina, Cape Verde], kickoff_local: "18:00",          score: "3-2",            decided_by: extra_time, minutes: 120, winner: Argentina,   days_to_R16: 4 }
+  - { id: R32-16, date: 2026-07-03, venue: kansas_city, teams: [Colombia, Ghana], kickoff_local: "20:30",                score: "1-0",            decided_by: regulation, minutes: 90,  winner: Colombia,    days_to_R16: 4 }
 
 # ---------------------------------------------------------------------------
 # ラウンド16 (2026-07-04 〜 07-07)

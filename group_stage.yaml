@@ -19,12 +19,12 @@ group_stage:
       - { pos: 3, team: South Korea,    pts: 3 }
       - { pos: 4, team: Czech Republic, pts: 1 }
     matches:
-      - { date: 2026-06-11, venue: mexico_city, teams: [Mexico, South Africa],        score: "2-0" }
-      - { date: 2026-06-11, venue: guadalajara, teams: [South Korea, Czech Republic], score: "2-1" }
-      - { date: 2026-06-18, venue: atlanta,     teams: [Czech Republic, South Africa],score: "1-1" }
-      - { date: 2026-06-18, venue: guadalajara, teams: [Mexico, South Korea],         score: "1-0" }
-      - { date: 2026-06-24, venue: mexico_city, teams: [Czech Republic, Mexico],      score: "0-3" }
-      - { date: 2026-06-24, venue: monterrey,   teams: [South Africa, South Korea],   score: "1-0" }
+      - { date: 2026-06-11, venue: mexico_city, teams: [Mexico, South Africa], kickoff_local: "13:00",        score: "2-0" }
+      - { date: 2026-06-11, venue: guadalajara, teams: [South Korea, Czech Republic], kickoff_local: "20:00", score: "2-1" }
+      - { date: 2026-06-18, venue: atlanta,     teams: [Czech Republic, South Africa], kickoff_local: "12:00",score: "1-1" }
+      - { date: 2026-06-18, venue: guadalajara, teams: [Mexico, South Korea], kickoff_local: "19:00",         score: "1-0" }
+      - { date: 2026-06-24, venue: mexico_city, teams: [Czech Republic, Mexico], kickoff_local: "19:00",      score: "0-3" }
+      - { date: 2026-06-24, venue: monterrey,   teams: [South Africa, South Korea], kickoff_local: "19:00",   score: "1-0" }
 
   B:
     standings:
@@ -33,12 +33,12 @@ group_stage:
       - { pos: 3, team: Bosnia and Herzegovina, pts: 4, advanced: true, third_place_qualifier: true }
       - { pos: 4, team: Qatar,                 pts: 1 }
     matches:
-      - { date: 2026-06-12, venue: toronto,     teams: [Canada, Bosnia and Herzegovina],      score: "1-1" }
-      - { date: 2026-06-13, venue: santa_clara, teams: [Qatar, Switzerland],                  score: "1-1" }
-      - { date: 2026-06-18, venue: los_angeles, teams: [Switzerland, Bosnia and Herzegovina], score: "4-1" }
-      - { date: 2026-06-18, venue: vancouver,   teams: [Canada, Qatar],                       score: "6-0" }
-      - { date: 2026-06-24, venue: vancouver,   teams: [Switzerland, Canada],                 score: "2-1" }
-      - { date: 2026-06-24, venue: seattle,     teams: [Bosnia and Herzegovina, Qatar],       score: "3-1" }
+      - { date: 2026-06-12, venue: toronto,     teams: [Canada, Bosnia and Herzegovina], kickoff_local: "15:00",      score: "1-1" }
+      - { date: 2026-06-13, venue: santa_clara, teams: [Qatar, Switzerland], kickoff_local: "12:00",                  score: "1-1" }
+      - { date: 2026-06-18, venue: los_angeles, teams: [Switzerland, Bosnia and Herzegovina], kickoff_local: "12:00", score: "4-1" }
+      - { date: 2026-06-18, venue: vancouver,   teams: [Canada, Qatar], kickoff_local: "15:00",                       score: "6-0" }
+      - { date: 2026-06-24, venue: vancouver,   teams: [Switzerland, Canada], kickoff_local: "12:00",                 score: "2-1" }
+      - { date: 2026-06-24, venue: seattle,     teams: [Bosnia and Herzegovina, Qatar], kickoff_local: "12:00",       score: "3-1" }
 
   C:
     standings:
@@ -47,12 +47,12 @@ group_stage:
       - { pos: 3, team: Scotland, pts: 3 }
       - { pos: 4, team: Haiti,    pts: 0 }
     matches:
-      - { date: 2026-06-13, venue: new_jersey,   teams: [Brazil, Morocco],   score: "1-1" }
-      - { date: 2026-06-13, venue: boston,       teams: [Haiti, Scotland],   score: "0-1" }
-      - { date: 2026-06-19, venue: boston,       teams: [Scotland, Morocco], score: "0-1" }
-      - { date: 2026-06-19, venue: philadelphia, teams: [Brazil, Haiti],     score: "3-0" }
-      - { date: 2026-06-24, venue: miami,        teams: [Scotland, Brazil],  score: "0-3" }
-      - { date: 2026-06-24, venue: atlanta,      teams: [Morocco, Haiti],    score: "4-2" }
+      - { date: 2026-06-13, venue: new_jersey,   teams: [Brazil, Morocco], kickoff_local: "18:00",   score: "1-1" }
+      - { date: 2026-06-13, venue: boston,       teams: [Haiti, Scotland], kickoff_local: "21:00",   score: "0-1" }
+      - { date: 2026-06-19, venue: boston,       teams: [Scotland, Morocco], kickoff_local: "18:00", score: "0-1" }
+      - { date: 2026-06-19, venue: philadelphia, teams: [Brazil, Haiti], kickoff_local: "20:30",     score: "3-0" }
+      - { date: 2026-06-24, venue: miami,        teams: [Scotland, Brazil], kickoff_local: "18:00",  score: "0-3" }
+      - { date: 2026-06-24, venue: atlanta,      teams: [Morocco, Haiti], kickoff_local: "18:00",    score: "4-2" }
 
   D:
     standings:
@@ -61,12 +61,12 @@ group_stage:
       - { pos: 3, team: Paraguay,      pts: 4, advanced: true, third_place_qualifier: true }
       - { pos: 4, team: Türkiye,       pts: 3 }
     matches:
-      - { date: 2026-06-12, venue: los_angeles, teams: [USA, Paraguay],  score: "4-1" }
-      - { date: 2026-06-13, venue: vancouver,   teams: [Australia, Türkiye],       score: "2-0" }
-      - { date: 2026-06-19, venue: seattle,     teams: [USA, Australia], score: "2-0" }
-      - { date: 2026-06-19, venue: santa_clara, teams: [Türkiye, Paraguay],        score: "0-1" }
-      - { date: 2026-06-25, venue: los_angeles, teams: [Türkiye, USA],   score: "3-2" }
-      - { date: 2026-06-25, venue: santa_clara, teams: [Paraguay, Australia],      score: "0-0" }
+      - { date: 2026-06-12, venue: los_angeles, teams: [USA, Paraguay], kickoff_local: "18:00",  score: "4-1" }
+      - { date: 2026-06-13, venue: vancouver,   teams: [Australia, Türkiye], kickoff_local: "21:00",       score: "2-0" }
+      - { date: 2026-06-19, venue: seattle,     teams: [USA, Australia], kickoff_local: "12:00", score: "2-0" }
+      - { date: 2026-06-19, venue: santa_clara, teams: [Türkiye, Paraguay], kickoff_local: "20:00",        score: "0-1" }
+      - { date: 2026-06-25, venue: los_angeles, teams: [Türkiye, USA], kickoff_local: "19:00",   score: "3-2" }
+      - { date: 2026-06-25, venue: santa_clara, teams: [Paraguay, Australia], kickoff_local: "19:00",      score: "0-0" }
 
   E:
     standings:
@@ -75,12 +75,12 @@ group_stage:
       - { pos: 3, team: Ecuador,     pts: 4, advanced: true, third_place_qualifier: true }
       - { pos: 4, team: Curaçao,     pts: 1 }
     matches:
-      - { date: 2026-06-14, venue: houston,      teams: [Germany, Curaçao],      score: "7-1" }
-      - { date: 2026-06-14, venue: philadelphia, teams: [Ivory Coast, Ecuador],  score: "1-0" }
-      - { date: 2026-06-20, venue: toronto,      teams: [Germany, Ivory Coast],  score: "2-1" }
-      - { date: 2026-06-20, venue: kansas_city,  teams: [Ecuador, Curaçao],      score: "0-0" }
-      - { date: 2026-06-25, venue: philadelphia, teams: [Curaçao, Ivory Coast],  score: "0-2" }
-      - { date: 2026-06-25, venue: new_jersey,   teams: [Ecuador, Germany],      score: "2-1" }
+      - { date: 2026-06-14, venue: houston,      teams: [Germany, Curaçao], kickoff_local: "12:00",      score: "7-1" }
+      - { date: 2026-06-14, venue: philadelphia, teams: [Ivory Coast, Ecuador], kickoff_local: "19:00",  score: "1-0" }
+      - { date: 2026-06-20, venue: toronto,      teams: [Germany, Ivory Coast], kickoff_local: "16:00",  score: "2-1" }
+      - { date: 2026-06-20, venue: kansas_city,  teams: [Ecuador, Curaçao], kickoff_local: "19:00",      score: "0-0" }
+      - { date: 2026-06-25, venue: philadelphia, teams: [Curaçao, Ivory Coast], kickoff_local: "16:00",  score: "0-2" }
+      - { date: 2026-06-25, venue: new_jersey,   teams: [Ecuador, Germany], kickoff_local: "16:00",      score: "2-1" }
 
   F:
     standings:
@@ -89,12 +89,12 @@ group_stage:
       - { pos: 3, team: Sweden,      pts: 4, advanced: true, third_place_qualifier: true }
       - { pos: 4, team: Tunisia,     pts: 0 }
     matches:
-      - { date: 2026-06-14, venue: arlington,   teams: [Netherlands, Japan],   score: "2-2" }
-      - { date: 2026-06-14, venue: monterrey,   teams: [Sweden, Tunisia],      score: "5-1" }
-      - { date: 2026-06-20, venue: houston,     teams: [Netherlands, Sweden],  score: "5-1" }
-      - { date: 2026-06-20, venue: monterrey,   teams: [Tunisia, Japan],       score: "0-4" }
-      - { date: 2026-06-25, venue: arlington,   teams: [Japan, Sweden],        score: "1-1" }
-      - { date: 2026-06-25, venue: kansas_city, teams: [Tunisia, Netherlands], score: "1-3" }
+      - { date: 2026-06-14, venue: arlington,   teams: [Netherlands, Japan], kickoff_local: "15:00",   score: "2-2" }
+      - { date: 2026-06-14, venue: monterrey,   teams: [Sweden, Tunisia], kickoff_local: "20:00",      score: "5-1" }
+      - { date: 2026-06-20, venue: houston,     teams: [Netherlands, Sweden], kickoff_local: "12:00",  score: "5-1" }
+      - { date: 2026-06-20, venue: monterrey,   teams: [Tunisia, Japan], kickoff_local: "22:00",       score: "0-4" }
+      - { date: 2026-06-25, venue: arlington,   teams: [Japan, Sweden], kickoff_local: "18:00",        score: "1-1" }
+      - { date: 2026-06-25, venue: kansas_city, teams: [Tunisia, Netherlands], kickoff_local: "18:00", score: "1-3" }
 
   G:
     standings:
@@ -103,12 +103,12 @@ group_stage:
       - { pos: 3, team: Iran,        pts: 3 }
       - { pos: 4, team: New Zealand, pts: 1 }
     matches:
-      - { date: 2026-06-15, venue: seattle,     teams: [Belgium, Egypt],       score: "1-1" }
-      - { date: 2026-06-15, venue: los_angeles, teams: [Iran, New Zealand],    score: "2-2" }
-      - { date: 2026-06-21, venue: los_angeles, teams: [Belgium, Iran],        score: "0-0" }
-      - { date: 2026-06-21, venue: vancouver,   teams: [New Zealand, Egypt],   score: "1-3" }
-      - { date: 2026-06-26, venue: seattle,     teams: [Egypt, Iran],          score: "1-1" }
-      - { date: 2026-06-26, venue: vancouver,   teams: [New Zealand, Belgium], score: "1-5" }
+      - { date: 2026-06-15, venue: seattle,     teams: [Belgium, Egypt], kickoff_local: "12:00",       score: "1-1" }
+      - { date: 2026-06-15, venue: los_angeles, teams: [Iran, New Zealand], kickoff_local: "18:00",    score: "2-2" }
+      - { date: 2026-06-21, venue: los_angeles, teams: [Belgium, Iran], kickoff_local: "12:00",        score: "0-0" }
+      - { date: 2026-06-21, venue: vancouver,   teams: [New Zealand, Egypt], kickoff_local: "18:00",   score: "1-3" }
+      - { date: 2026-06-26, venue: seattle,     teams: [Egypt, Iran], kickoff_local: "20:00",          score: "1-1" }
+      - { date: 2026-06-26, venue: vancouver,   teams: [New Zealand, Belgium], kickoff_local: "20:00", score: "1-5" }
 
   H:
     standings:
@@ -117,12 +117,12 @@ group_stage:
       - { pos: 3, team: Uruguay,      pts: 2 }
       - { pos: 4, team: Saudi Arabia, pts: 2 }
     matches:
-      - { date: 2026-06-15, venue: atlanta,     teams: [Spain, Cape Verde],         score: "0-0" }
-      - { date: 2026-06-15, venue: miami,       teams: [Saudi Arabia, Uruguay],     score: "1-1" }
-      - { date: 2026-06-21, venue: atlanta,     teams: [Spain, Saudi Arabia],       score: "4-0" }
-      - { date: 2026-06-21, venue: miami,       teams: [Uruguay, Cape Verde],       score: "2-2" }
-      - { date: 2026-06-26, venue: houston,     teams: [Cape Verde, Saudi Arabia],  score: "0-0" }
-      - { date: 2026-06-26, venue: guadalajara, teams: [Uruguay, Spain],            score: "0-1" }
+      - { date: 2026-06-15, venue: atlanta,     teams: [Spain, Cape Verde], kickoff_local: "12:00",         score: "0-0" }
+      - { date: 2026-06-15, venue: miami,       teams: [Saudi Arabia, Uruguay], kickoff_local: "18:00",     score: "1-1" }
+      - { date: 2026-06-21, venue: atlanta,     teams: [Spain, Saudi Arabia], kickoff_local: "12:00",       score: "4-0" }
+      - { date: 2026-06-21, venue: miami,       teams: [Uruguay, Cape Verde], kickoff_local: "18:00",       score: "2-2" }
+      - { date: 2026-06-26, venue: houston,     teams: [Cape Verde, Saudi Arabia], kickoff_local: "19:00",  score: "0-0" }
+      - { date: 2026-06-26, venue: guadalajara, teams: [Uruguay, Spain], kickoff_local: "18:00",            score: "0-1" }
 
   I:
     standings:
@@ -131,12 +131,12 @@ group_stage:
       - { pos: 3, team: Senegal, pts: 3, advanced: true, third_place_qualifier: true }   # 3位突破組で唯一の勝点3
       - { pos: 4, team: Iraq,    pts: 0 }
     matches:
-      - { date: 2026-06-16, venue: new_jersey,   teams: [France, Senegal],  score: "3-1" }
-      - { date: 2026-06-16, venue: boston,       teams: [Iraq, Norway],     score: "1-4" }
-      - { date: 2026-06-22, venue: philadelphia, teams: [France, Iraq],     score: "3-0" }
-      - { date: 2026-06-22, venue: new_jersey,   teams: [Norway, Senegal],  score: "3-2" }
-      - { date: 2026-06-26, venue: boston,       teams: [Norway, France],   score: "1-4" }
-      - { date: 2026-06-26, venue: toronto,      teams: [Senegal, Iraq],    score: "5-0" }
+      - { date: 2026-06-16, venue: new_jersey,   teams: [France, Senegal], kickoff_local: "15:00",  score: "3-1" }
+      - { date: 2026-06-16, venue: boston,       teams: [Iraq, Norway], kickoff_local: "18:00",     score: "1-4" }
+      - { date: 2026-06-22, venue: philadelphia, teams: [France, Iraq], kickoff_local: "17:00",     score: "3-0" }
+      - { date: 2026-06-22, venue: new_jersey,   teams: [Norway, Senegal], kickoff_local: "20:00",  score: "3-2" }
+      - { date: 2026-06-26, venue: boston,       teams: [Norway, France], kickoff_local: "15:00",   score: "1-4" }
+      - { date: 2026-06-26, venue: toronto,      teams: [Senegal, Iraq], kickoff_local: "15:00",    score: "5-0" }
 
   J:
     standings:
@@ -145,12 +145,12 @@ group_stage:
       - { pos: 3, team: Algeria,   pts: 4, advanced: true, third_place_qualifier: true }
       - { pos: 4, team: Jordan,    pts: 0 }
     matches:
-      - { date: 2026-06-16, venue: kansas_city, teams: [Argentina, Algeria], score: "3-0" }
-      - { date: 2026-06-16, venue: santa_clara, teams: [Austria, Jordan],    score: "3-1" }
-      - { date: 2026-06-22, venue: arlington,   teams: [Argentina, Austria], score: "2-0" }
-      - { date: 2026-06-22, venue: santa_clara, teams: [Jordan, Algeria],    score: "1-2" }
-      - { date: 2026-06-27, venue: kansas_city, teams: [Algeria, Austria],   score: "3-3" }
-      - { date: 2026-06-27, venue: arlington,   teams: [Jordan, Argentina],  score: "1-3" }
+      - { date: 2026-06-16, venue: kansas_city, teams: [Argentina, Algeria], kickoff_local: "20:00", score: "3-0" }
+      - { date: 2026-06-16, venue: santa_clara, teams: [Austria, Jordan], kickoff_local: "21:00",    score: "3-1" }
+      - { date: 2026-06-22, venue: arlington,   teams: [Argentina, Austria], kickoff_local: "12:00", score: "2-0" }
+      - { date: 2026-06-22, venue: santa_clara, teams: [Jordan, Algeria], kickoff_local: "20:00",    score: "1-2" }
+      - { date: 2026-06-27, venue: kansas_city, teams: [Algeria, Austria], kickoff_local: "21:00",   score: "3-3" }
+      - { date: 2026-06-27, venue: arlington,   teams: [Jordan, Argentina], kickoff_local: "21:00",  score: "1-3" }
 
   K:
     standings:
@@ -159,12 +159,12 @@ group_stage:
       - { pos: 3, team: DR Congo,   pts: 4, advanced: true, third_place_qualifier: true }
       - { pos: 4, team: Uzbekistan, pts: 0 }
     matches:
-      - { date: 2026-06-17, venue: houston,     teams: [Portugal, DR Congo],   score: "1-1" }
-      - { date: 2026-06-17, venue: mexico_city, teams: [Uzbekistan, Colombia], score: "1-3" }
-      - { date: 2026-06-23, venue: houston,     teams: [Portugal, Uzbekistan], score: "5-0" }
-      - { date: 2026-06-23, venue: guadalajara, teams: [Colombia, DR Congo],   score: "1-0" }
-      - { date: 2026-06-27, venue: miami,       teams: [Colombia, Portugal],   score: "0-0" }
-      - { date: 2026-06-27, venue: atlanta,     teams: [DR Congo, Uzbekistan], score: "3-1" }
+      - { date: 2026-06-17, venue: houston,     teams: [Portugal, DR Congo], kickoff_local: "12:00",   score: "1-1" }
+      - { date: 2026-06-17, venue: mexico_city, teams: [Uzbekistan, Colombia], kickoff_local: "20:00", score: "1-3" }
+      - { date: 2026-06-23, venue: houston,     teams: [Portugal, Uzbekistan], kickoff_local: "12:00", score: "5-0" }
+      - { date: 2026-06-23, venue: guadalajara, teams: [Colombia, DR Congo], kickoff_local: "20:00",   score: "1-0" }
+      - { date: 2026-06-27, venue: miami,       teams: [Colombia, Portugal], kickoff_local: "19:30",   score: "0-0" }
+      - { date: 2026-06-27, venue: atlanta,     teams: [DR Congo, Uzbekistan], kickoff_local: "19:30", score: "3-1" }
 
   L:
     standings:
@@ -173,9 +173,9 @@ group_stage:
       - { pos: 3, team: Ghana,   pts: 4, advanced: true, third_place_qualifier: true }
       - { pos: 4, team: Panama,  pts: 0 }
     matches:
-      - { date: 2026-06-17, venue: arlington,    teams: [England, Croatia], score: "4-2" }
-      - { date: 2026-06-17, venue: toronto,      teams: [Ghana, Panama],    score: "1-0" }
-      - { date: 2026-06-23, venue: boston,       teams: [England, Ghana],   score: "0-0" }
-      - { date: 2026-06-23, venue: toronto,      teams: [Panama, Croatia],  score: "0-1" }
-      - { date: 2026-06-27, venue: new_jersey,   teams: [Panama, England],  score: "0-2" }
-      - { date: 2026-06-27, venue: philadelphia, teams: [Croatia, Ghana],   score: "2-1" }
+      - { date: 2026-06-17, venue: arlington,    teams: [England, Croatia], kickoff_local: "15:00", score: "4-2" }
+      - { date: 2026-06-17, venue: toronto,      teams: [Ghana, Panama], kickoff_local: "19:00",    score: "1-0" }
+      - { date: 2026-06-23, venue: boston,       teams: [England, Ghana], kickoff_local: "16:00",   score: "0-0" }
+      - { date: 2026-06-23, venue: toronto,      teams: [Panama, Croatia], kickoff_local: "19:00",  score: "0-1" }
+      - { date: 2026-06-27, venue: new_jersey,   teams: [Panama, England], kickoff_local: "17:00",  score: "0-2" }
+      - { date: 2026-06-27, venue: philadelphia, teams: [Croatia, Ghana], kickoff_local: "17:00",   score: "2-1" }
