@@ -1,6 +1,7 @@
-# FIFA World Cup 2026 — 決勝トーナメント予想
+# FIFA World Cup 2026 — 決勝トーナメント(事実データのみ)
 # 状況: ラウンド16が出揃った時点 (2026-07-04)
-# 予想の観点: 移動負担(会場座標)と疲労(日時・標高)を重視する
+# 予想は predictions.yaml に分離。このファイルは会場・日程・結果・組み合わせ等の事実のみ。
+# 更新手順: 実際の結果が出たら該当ラウンドに事実を追記 → predictions.yaml と予想スクリプトを更新。
 #
 # 注記:
 #   - 時刻は現地キックオフ時刻の ET (米東部時間) 表記。
@@ -77,7 +78,6 @@ round_of_16:
     venue: houston
     home: Canada
     away: Morocco
-    prediction: { winner: Morocco, p: 0.65 }   # 地力+疲労+ホーム(Canadaは非ホーム)
 
   - id: R16-2
     date: 2026-07-04
@@ -85,7 +85,6 @@ round_of_16:
     venue: philadelphia
     home: Paraguay
     away: France
-    prediction: { winner: France, p: 0.85 }   # 地力9.9倍
 
   - id: R16-3
     date: 2026-07-05
@@ -93,7 +92,6 @@ round_of_16:
     venue: new_jersey
     home: Brazil
     away: Norway
-    prediction: { winner: Brazil, p: 0.58 }
 
   - id: R16-4
     date: 2026-07-05
@@ -101,7 +99,6 @@ round_of_16:
     venue: mexico_city
     home: Mexico
     away: England
-    prediction: { winner: England, p: 0.66 }   # Mexicoにホーム+高地補正で80→66に縮小
 
   - id: R16-5
     date: 2026-07-06
@@ -109,7 +106,6 @@ round_of_16:
     venue: arlington
     home: Spain
     away: Portugal
-    prediction: { winner: Spain, p: 0.52 }   # 地力互角+Spainの疲労重くほぼ五分
 
   - id: R16-6
     date: 2026-07-06
@@ -117,7 +113,6 @@ round_of_16:
     venue: seattle
     home: Belgium
     away: USA
-    prediction: { winner: USA, p: 0.53 }   # USAホームでBelgiumを逆転
 
   - id: R16-7
     date: 2026-07-07
@@ -125,7 +120,6 @@ round_of_16:
     venue: atlanta
     home: Egypt
     away: Argentina
-    prediction: { winner: Argentina, p: 0.81 }   # 地力6.9倍+疲労も少
 
   - id: R16-8
     date: 2026-07-07
@@ -133,7 +127,6 @@ round_of_16:
     venue: vancouver
     home: Switzerland
     away: Colombia
-    prediction: { winner: Switzerland, p: 0.56 }   # 地力互角+Colombia疲労最大で逆転
 
 # ---------------------------------------------------------------------------
 # 準々決勝 (2026-07-09 〜 07-11) — 会場・日程はFIFA日程で確定済み
@@ -146,28 +139,24 @@ quarterfinals:
     venue: boston
     home: { winner: R16-1 }   # Canada/Morocco
     away: { winner: R16-2 }   # Paraguay/France
-    prediction: { winner: France, p: 0.73 }   # Morocco vs France
   - id: QF-2          # M99
     date: 2026-07-11
     kickoff_et: "17:00"
     venue: miami
     home: { winner: R16-3 }   # Brazil/Norway
     away: { winner: R16-4 }   # Mexico/England
-    prediction: { winner: England, p: 0.56 }   # Brazil vs England (England高地負荷で接戦)
   - id: QF-3          # M98
     date: 2026-07-10
     kickoff_et: "15:00"
     venue: los_angeles
     home: { winner: R16-5 }   # Spain/Portugal
     away: { winner: R16-6 }   # Belgium/USA
-    prediction: { winner: Spain, p: 0.61 }   # Spain vs USA (USAホームでも地力差)
   - id: QF-4          # M100
     date: 2026-07-11
     kickoff_et: "21:00"
     venue: kansas_city
     home: { winner: R16-7 }   # Egypt/Argentina
     away: { winner: R16-8 }   # Switzerland/Colombia
-    prediction: { winner: Argentina, p: 0.66 }   # Argentina vs Switzerland
 
 # ---------------------------------------------------------------------------
 # 準決勝 (2026-07-14 〜 07-15) — 両会場とも開閉式屋根+空調
@@ -180,14 +169,12 @@ semifinals:
     venue: arlington
     home: { winner: QF-1 }    # Boston QF勝者
     away: { winner: QF-3 }    # Los Angeles QF勝者
-    prediction: { winner: France, p: 0.56 }   # France vs Spain (Spainの移動10,376kmが重い)
   - id: SF-2          # M102
     date: 2026-07-15
     kickoff_et: "15:00"
     venue: atlanta
     home: { winner: QF-2 }    # Miami QF勝者
     away: { winner: QF-4 }    # Kansas City QF勝者
-    prediction: { winner: England, p: 0.54 }   # England vs Argentina (England疲労最大で僅差)
 
 # ---------------------------------------------------------------------------
 # 決勝 (2026-07-19, New Jersey / MetLife Stadium) — 屋外・空調なし
@@ -199,4 +186,3 @@ final:
   venue: new_jersey
   home: { winner: SF-1 }
   away: { winner: SF-2 }
-  prediction: { winner: France, p: 0.55, runner_up: England }   # France vs England

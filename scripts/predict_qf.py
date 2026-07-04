@@ -37,9 +37,10 @@ def d(s):
     y, mo, dd = map(int, str(s).split("-"))
     return date(y, mo, dd)
 
-r16_by_team = {m["prediction"]["winner"]: m for m in B["round_of_16"]}
+P = yaml.safe_load(open("predictions.yaml"))["predictions"]   # 予想は別ファイル
+r16_by_team = {P[m["id"]]["winner"]: m for m in B["round_of_16"]}
 r32_by_team = {m["winner"]: m for m in B["round_of_32"]}
-r16_win = {m["id"]: m["prediction"]["winner"] for m in B["round_of_16"]}
+r16_win = {m["id"]: P[m["id"]]["winner"] for m in B["round_of_16"]}
 
 
 def accumulate(team, qf_venue, qf_date):

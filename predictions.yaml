@@ -1,0 +1,35 @@
+# FIFA World Cup 2026 — 決勝トーナメント予想 (予想のみ)
+#
+# 事実(会場・日程・結果・組み合わせ)は bracket.yaml / group_stage.yaml / strength.yaml。
+# ここは予想だけを持つ。id は bracket.yaml の各試合idに対応。
+#   winner: 予想勝者   p: 勝率
+# 末尾コメントは可読性のための対戦カード(R16は実カード, QF以降は予想勝者同士)。
+#
+# モデル: scripts/predict_r16.py → predict_qf.py → predict_sf.py → predict_final.py
+#   地力(ln市場価値)を主軸、疲労を従、ホーム(+高地)補正。R16以降は延長なし前提。
+# 更新手順: 実結果が出たら bracket.yaml に事実追記 → ここの該当予想を確定値に置換 →
+#   後段ラウンドの予想スクリプトを再実行して更新。
+
+predictions:
+  # --- R16 (実カード) ---
+  R16-1: { winner: Morocco,     p: 0.65 }   # Canada vs Morocco (Canadaは非ホーム@Houston)
+  R16-2: { winner: France,      p: 0.85 }   # Paraguay vs France
+  R16-3: { winner: Brazil,      p: 0.58 }   # Brazil vs Norway
+  R16-4: { winner: England,     p: 0.66 }   # Mexico vs England (Mexicoにホーム+高地補正)
+  R16-5: { winner: Spain,       p: 0.52 }   # Spain vs Portugal (疲労でほぼ五分)
+  R16-6: { winner: USA,         p: 0.53 }   # Belgium vs USA (USAホームで逆転)
+  R16-7: { winner: Argentina,   p: 0.81 }   # Egypt vs Argentina
+  R16-8: { winner: Switzerland, p: 0.56 }   # Switzerland vs Colombia (Colombia疲労最大で逆転)
+
+  # --- QF (予想カード) ---
+  QF-1: { winner: France,    p: 0.73 }   # Morocco vs France
+  QF-2: { winner: England,   p: 0.56 }   # Brazil vs England (England高地負荷で接戦)
+  QF-3: { winner: Spain,     p: 0.61 }   # Spain vs USA (USAホームでも地力差)
+  QF-4: { winner: Argentina, p: 0.66 }   # Argentina vs Switzerland
+
+  # --- SF (予想カード) ---
+  SF-1: { winner: France,  p: 0.56 }   # France vs Spain (Spainの移動10,376kmが重い)
+  SF-2: { winner: England, p: 0.54 }   # England vs Argentina (England疲労最大で僅差)
+
+  # --- 決勝 ---
+  FINAL: { winner: France, p: 0.55, runner_up: England }   # France vs England

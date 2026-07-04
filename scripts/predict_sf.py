@@ -32,16 +32,17 @@ def d(s):
     y, mo, dd = map(int, str(s).split("-"))
     return date(y, mo, dd)
 
-r16_by_team = {m["prediction"]["winner"]: m for m in B["round_of_16"]}
+P = yaml.safe_load(open("predictions.yaml"))["predictions"]   # 予想は別ファイル
+r16_by_team = {P[m["id"]]["winner"]: m for m in B["round_of_16"]}
 r32_by_team = {m["winner"]: m for m in B["round_of_32"]}
-r16_win = {m["id"]: m["prediction"]["winner"] for m in B["round_of_16"]}
+r16_win = {m["id"]: P[m["id"]]["winner"] for m in B["round_of_16"]}
 
 # QFカードを予想R16勝者で解決し、予想QF勝者ごとにQF情報を持つ
 qf_by_team = {}
 for q in B["quarterfinals"]:
     a, b = r16_win[q["home"]["winner"]], r16_win[q["away"]["winner"]]
     q2 = dict(q); q2["a"], q2["b"] = a, b
-    qf_by_team[q["prediction"]["winner"]] = q2
+    qf_by_team[P[q["id"]]["winner"]] = q2
 
 def accumulate(team, sf_venue, sf_date):
     gm = gmatches(team); rested = clinched(team)
@@ -71,7 +72,7 @@ def accumulate(team, sf_venue, sf_date):
 
 # SFカードを予想QF勝者で解決
 SF = []
-qf_win = {q["id"]: q["prediction"]["winner"] for q in B["quarterfinals"]}
+qf_win = {q["id"]: P[q["id"]]["winner"] for q in B["quarterfinals"]}
 for s in B["semifinals"]:
     SF.append(dict(id=s["id"], venue=s["venue"], date=str(s["date"]),
                    a=qf_win[s["home"]["winner"]], b=qf_win[s["away"]["winner"]]))

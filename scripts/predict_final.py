@@ -31,16 +31,11 @@ def d(s):
     y, mo, dd = map(int, str(s).split("-"))
     return date(y, mo, dd)
 
-r16_by_team = {m["prediction"]["winner"]: m for m in B["round_of_16"]}
+P = yaml.safe_load(open("predictions.yaml"))["predictions"]   # 予想は別ファイル
+r16_by_team = {P[m["id"]]["winner"]: m for m in B["round_of_16"]}
 r32_by_team = {m["winner"]: m for m in B["round_of_32"]}
-r16_win = {m["id"]: m["prediction"]["winner"] for m in B["round_of_16"]}
-qf_win = {q["id"]: q["prediction"]["winner"] for q in B["quarterfinals"]}
-qf_by_team = {}
-for q in B["quarterfinals"]:
-    q2 = dict(q); qf_by_team[q["prediction"]["winner"]] = q2
-sf_by_team = {}
-for s in B["semifinals"]:
-    s2 = dict(s); sf_by_team[s["prediction"]["winner"]] = s2
+qf_by_team = {P[q["id"]]["winner"]: dict(q) for q in B["quarterfinals"]}
+sf_by_team = {P[s["id"]]["winner"]: dict(s) for s in B["semifinals"]}
 
 F = B["final"]
 FIN_V, FIN_D = F["venue"], str(F["date"])
@@ -71,10 +66,8 @@ def accumulate(team):
     return dict(team=team, heat=round(h, 1), alt=round(a, 2), km=round(km),
                 mins=round(mins), rest=rest, fatigue=round(idx, 3))
 
-a_team = qf_win  # noqa (silence)
-fin_a = sf_by_team and None
-A = B["semifinals"][0]["prediction"]["winner"]  # SF-1勝者
-Bt = B["semifinals"][1]["prediction"]["winner"]  # SF-2勝者
+A = P["SF-1"]["winner"]   # SF-1勝者
+Bt = P["SF-2"]["winner"]  # SF-2勝者
 accA, accB = accumulate(A), accumulate(Bt)
 
 def Q(acc):
