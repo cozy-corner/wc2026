@@ -1,0 +1,202 @@
+# FIFA World Cup 2026 — 決勝トーナメント予想
+# 状況: ラウンド16が出揃った時点 (2026-07-04)
+# 予想の観点: 移動負担(会場座標)と疲労(日時・標高)を重視する
+#
+# 注記:
+#   - 時刻は現地キックオフ時刻の ET (米東部時間) 表記。
+#   - coords は移動距離計算用の概算緯度経度。
+#   - elevation_m は疲労要因(高地)判断用の会場標高(概算)。
+#   - QF以降のペアリングは標準の隣接ペア方式 (match 89v90, 91v92, ...)。
+
+tournament:
+  name: FIFA World Cup 2026
+  hosts: [USA, Canada, Mexico]
+  final: { date: 2026-07-19, venue: new_jersey }
+
+# ---------------------------------------------------------------------------
+# 会場マスタ (移動負担・疲労の判断材料)
+#   roof: none(屋外) / retractable(開閉式) / fixed(固定)
+#   air_conditioned: 空調完備か (7月の暑熱対策として重要)
+#   july_avg_high_c:  7月の日中平均最高気温(°C, 気候平年値の概算)
+#   july_humidity_pct: 7月の平均相対湿度(%). 気温×湿度=体感(ヒートインデックス)
+#   ※ 空調ありの会場は屋内の実効環境が快適なため、下記の外気値は屋外時の参考値
+# ---------------------------------------------------------------------------
+venues:
+  houston:      { city: Houston,        country: USA,    stadium: NRG Stadium,             coords: [29.68, -95.41],  elevation_m: 15,   roof: retractable, air_conditioned: true,  july_avg_high_c: 34, july_humidity_pct: 74 }
+  philadelphia: { city: Philadelphia,   country: USA,    stadium: Lincoln Financial Field, coords: [39.90, -75.17],  elevation_m: 12,   roof: none,        air_conditioned: false, july_avg_high_c: 30, july_humidity_pct: 67 }
+  new_jersey:   { city: East Rutherford, country: USA,   stadium: MetLife Stadium,         coords: [40.81, -74.07],  elevation_m: 7,    roof: none,        air_conditioned: false, july_avg_high_c: 29, july_humidity_pct: 65 }
+  mexico_city:  { city: Mexico City,    country: Mexico, stadium: Estadio Azteca,          coords: [19.30, -99.15],  elevation_m: 2240, roof: none,        air_conditioned: false, july_avg_high_c: 23, july_humidity_pct: 70 }
+  arlington:    { city: Arlington,      country: USA,    stadium: AT&T Stadium,            coords: [32.75, -97.09],  elevation_m: 180,  roof: retractable, air_conditioned: true,  july_avg_high_c: 36, july_humidity_pct: 57 }
+  seattle:      { city: Seattle,        country: USA,    stadium: Lumen Field,             coords: [47.60, -122.33], elevation_m: 55,   roof: none,        air_conditioned: false, july_avg_high_c: 24, july_humidity_pct: 63 }
+  atlanta:      { city: Atlanta,        country: USA,    stadium: Mercedes-Benz Stadium,   coords: [33.76, -84.40],  elevation_m: 320,  roof: retractable, air_conditioned: true,  july_avg_high_c: 32, july_humidity_pct: 70 }
+  vancouver:    { city: Vancouver,      country: Canada, stadium: BC Place,                coords: [49.28, -123.11], elevation_m: 3,    roof: retractable, air_conditioned: false, july_avg_high_c: 22, july_humidity_pct: 70 }
+  # --- ノックアウト(QF以降)専用会場 ---
+  boston:       { city: Foxborough,     country: USA,    stadium: Gillette Stadium,        coords: [42.09, -71.26],  elevation_m: 90,   roof: none,        air_conditioned: false, july_avg_high_c: 28, july_humidity_pct: 66 }
+  los_angeles:  { city: Inglewood,      country: USA,    stadium: SoFi Stadium,            coords: [33.95, -118.34], elevation_m: 30,   roof: fixed,       air_conditioned: false, july_avg_high_c: 28, july_humidity_pct: 66 }  # 固定屋根+側面開放(自然換気)
+  miami:        { city: Miami Gardens,  country: USA,    stadium: Hard Rock Stadium,       coords: [25.96, -80.24],  elevation_m: 3,    roof: none,        air_conditioned: false, july_avg_high_c: 32, july_humidity_pct: 76 }  # 観客席は屋根で覆うがピッチは屋外
+  kansas_city:  { city: Kansas City,    country: USA,    stadium: Arrowhead Stadium,       coords: [39.05, -94.48],  elevation_m: 270,  roof: none,        air_conditioned: false, july_avg_high_c: 33, july_humidity_pct: 64 }
+  # --- ラウンド32で使用した追加会場 ---
+  monterrey:    { city: Guadalupe,      country: Mexico, stadium: Estadio BBVA,            coords: [25.67, -100.24], elevation_m: 500,  roof: none,        air_conditioned: false, july_avg_high_c: 35, july_humidity_pct: 58 }
+  santa_clara:  { city: Santa Clara,    country: USA,    stadium: Levi's Stadium,          coords: [37.40, -121.97], elevation_m: 7,    roof: none,        air_conditioned: false, july_avg_high_c: 27, july_humidity_pct: 62 }
+  toronto:      { city: Toronto,        country: Canada, stadium: BMO Field,               coords: [43.63, -79.42],  elevation_m: 76,   roof: none,        air_conditioned: false, july_avg_high_c: 27, july_humidity_pct: 68 }
+  # --- グループリーグで使用した追加会場 ---
+  guadalajara:  { city: Guadalajara,    country: Mexico, stadium: Estadio Akron,           coords: [20.68, -103.46], elevation_m: 1560, roof: none,        air_conditioned: false, july_avg_high_c: 26, july_humidity_pct: 66 }
+
+# ---------------------------------------------------------------------------
+# ラウンド32 (2026-06-28 〜 07-03) — 結果確定済み
+#   decided_by: regulation(90分) / extra_time(120分) / penalties(120分+PK)
+#   minutes: 勝者が戦った時間。120分組は疲労と休養不足が上乗せ(疲労予想の要)。
+#   days_to_R16: この試合日からR16初戦までの日数間隔 (真の休養日数 = この値-1)
+# ---------------------------------------------------------------------------
+round_of_32:
+  - { id: R32-1,  date: 2026-06-28, venue: los_angeles, teams: [Canada, South Africa],           score: "1-0",            decided_by: regulation, minutes: 90,  winner: Canada,      days_to_R16: 6 }
+  - { id: R32-2,  date: 2026-06-29, venue: houston,     teams: [Brazil, Japan],                  score: "2-1",            decided_by: regulation, minutes: 90,  winner: Brazil,      days_to_R16: 6 }
+  - { id: R32-3,  date: 2026-06-29, venue: boston,      teams: [Paraguay, Germany],              score: "1-1 (pens 4-3)", decided_by: penalties,  minutes: 120, winner: Paraguay,    days_to_R16: 5 }
+  - { id: R32-4,  date: 2026-06-29, venue: monterrey,   teams: [Morocco, Netherlands],           score: "1-1 (pens 3-2)", decided_by: penalties,  minutes: 120, winner: Morocco,     days_to_R16: 5 }
+  - { id: R32-5,  date: 2026-06-30, venue: arlington,   teams: [Norway, Ivory Coast],            score: "2-1",            decided_by: regulation, minutes: 90,  winner: Norway,      days_to_R16: 5 }
+  - { id: R32-6,  date: 2026-06-30, venue: new_jersey,  teams: [France, Sweden],                 score: "3-0",            decided_by: regulation, minutes: 90,  winner: France,      days_to_R16: 4 }
+  - { id: R32-7,  date: 2026-06-30, venue: mexico_city, teams: [Mexico, Ecuador],                score: "2-0",            decided_by: regulation, minutes: 90,  winner: Mexico,      days_to_R16: 5 }
+  - { id: R32-8,  date: 2026-07-01, venue: atlanta,     teams: [England, DR Congo],              score: "2-1",            decided_by: regulation, minutes: 90,  winner: England,     days_to_R16: 4 }
+  - { id: R32-9,  date: 2026-07-01, venue: seattle,     teams: [Belgium, Senegal],               score: "3-2",            decided_by: extra_time, minutes: 120, winner: Belgium,     days_to_R16: 5 }
+  - { id: R32-10, date: 2026-07-01, venue: santa_clara, teams: [USA, Bosnia and Herzegovina],    score: "2-0",            decided_by: regulation, minutes: 90,  winner: USA,         days_to_R16: 5 }
+  - { id: R32-11, date: 2026-07-02, venue: los_angeles, teams: [Spain, Austria],                 score: "3-0",            decided_by: regulation, minutes: 90,  winner: Spain,       days_to_R16: 4 }
+  - { id: R32-12, date: 2026-07-02, venue: toronto,     teams: [Portugal, Croatia],              score: "2-1",            decided_by: regulation, minutes: 90,  winner: Portugal,    days_to_R16: 4 }
+  - { id: R32-13, date: 2026-07-02, venue: vancouver,   teams: [Switzerland, Algeria],           score: "2-0",            decided_by: regulation, minutes: 90,  winner: Switzerland, days_to_R16: 5 }
+  - { id: R32-14, date: 2026-07-03, venue: arlington,   teams: [Egypt, Australia],               score: "0-0 (pens 4-2)", decided_by: penalties,  minutes: 120, winner: Egypt,       days_to_R16: 4 }
+  - { id: R32-15, date: 2026-07-03, venue: miami,       teams: [Argentina, Cape Verde],          score: "3-2",            decided_by: extra_time, minutes: 120, winner: Argentina,   days_to_R16: 4 }
+  - { id: R32-16, date: 2026-07-03, venue: kansas_city, teams: [Colombia, Ghana],                score: "1-0",            decided_by: regulation, minutes: 90,  winner: Colombia,    days_to_R16: 4 }
+
+# ---------------------------------------------------------------------------
+# ラウンド16 (2026-07-04 〜 07-07)
+# 各試合に id を振り、QF以降は winner: で参照する
+# ---------------------------------------------------------------------------
+round_of_16:
+  - id: R16-1
+    date: 2026-07-04
+    kickoff_et: "13:00"
+    venue: houston
+    home: Canada
+    away: Morocco
+    prediction: null   # 勝者予想をここに入れる
+
+  - id: R16-2
+    date: 2026-07-04
+    kickoff_et: "17:00"
+    venue: philadelphia
+    home: Paraguay
+    away: France
+    prediction: null
+
+  - id: R16-3
+    date: 2026-07-05
+    kickoff_et: "16:00"
+    venue: new_jersey
+    home: Brazil
+    away: Norway
+    prediction: null
+
+  - id: R16-4
+    date: 2026-07-05
+    kickoff_et: "20:00"
+    venue: mexico_city
+    home: Mexico
+    away: England
+    prediction: null
+
+  - id: R16-5
+    date: 2026-07-06
+    kickoff_et: "15:00"
+    venue: arlington
+    home: Spain
+    away: Portugal
+    prediction: null
+
+  - id: R16-6
+    date: 2026-07-06
+    kickoff_et: "20:00"
+    venue: seattle
+    home: Belgium
+    away: USA
+    prediction: null
+
+  - id: R16-7
+    date: 2026-07-07
+    kickoff_et: "12:00"
+    venue: atlanta
+    home: Egypt
+    away: Argentina
+    prediction: null
+
+  - id: R16-8
+    date: 2026-07-07
+    kickoff_et: "16:00"
+    venue: vancouver
+    home: Switzerland
+    away: Colombia
+    prediction: null
+
+# ---------------------------------------------------------------------------
+# 準々決勝 (2026-07-09 〜 07-11) — 会場・日程はFIFA日程で確定済み
+#   FIFA試合番号: QF-1=M97, QF-2=M99, QF-3=M98, QF-4=M100
+# ---------------------------------------------------------------------------
+quarterfinals:
+  - id: QF-1          # M97
+    date: 2026-07-09
+    kickoff_et: null  # TBD
+    venue: boston
+    home: { winner: R16-1 }   # Canada/Morocco
+    away: { winner: R16-2 }   # Paraguay/France
+    prediction: null
+  - id: QF-2          # M99
+    date: 2026-07-11
+    kickoff_et: null
+    venue: miami
+    home: { winner: R16-3 }   # Brazil/Norway
+    away: { winner: R16-4 }   # Mexico/England
+    prediction: null
+  - id: QF-3          # M98
+    date: 2026-07-10
+    kickoff_et: null
+    venue: los_angeles
+    home: { winner: R16-5 }   # Spain/Portugal
+    away: { winner: R16-6 }   # Belgium/USA
+    prediction: null
+  - id: QF-4          # M100
+    date: 2026-07-11
+    kickoff_et: null
+    venue: kansas_city
+    home: { winner: R16-7 }   # Egypt/Argentina
+    away: { winner: R16-8 }   # Switzerland/Colombia
+    prediction: null
+
+# ---------------------------------------------------------------------------
+# 準決勝 (2026-07-14 〜 07-15) — 両会場とも開閉式屋根+空調
+#   注意: ブラケットは交差構造 (M101 = QF-1勝者 vs QF-3勝者)
+# ---------------------------------------------------------------------------
+semifinals:
+  - id: SF-1          # M101
+    date: 2026-07-14
+    kickoff_et: null
+    venue: arlington
+    home: { winner: QF-1 }    # Boston QF勝者
+    away: { winner: QF-3 }    # Los Angeles QF勝者
+    prediction: null
+  - id: SF-2          # M102
+    date: 2026-07-15
+    kickoff_et: null
+    venue: atlanta
+    home: { winner: QF-2 }    # Miami QF勝者
+    away: { winner: QF-4 }    # Kansas City QF勝者
+    prediction: null
+
+# ---------------------------------------------------------------------------
+# 決勝 (2026-07-19, New Jersey / MetLife Stadium) — 屋外・空調なし
+# ---------------------------------------------------------------------------
+final:
+  id: FINAL           # M104
+  date: 2026-07-19
+  kickoff_et: "15:00"
+  venue: new_jersey
+  home: { winner: SF-1 }
+  away: { winner: SF-2 }
+  prediction: null
