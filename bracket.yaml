@@ -199,4 +199,4 @@ final:
   venue: new_jersey
   home: { winner: SF-1 }
   away: { winner: SF-2 }
-  prediction: null
+  prediction: { winner: France, p: 0.55, runner_up: England }   # France vs England
