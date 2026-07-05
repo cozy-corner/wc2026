@@ -13,9 +13,9 @@
 # バージョン: ラウンドが進む/モデルを変えるたびに version を +1 し、
 #   as_of・stage・確定済み予想を更新する。過去世代は git 履歴で辿れる。
 meta:
-  version: 3
-  as_of: 2026-07-04        # この予想を立てた時点
-  stage: pre-R16           # 未消化の最初のラウンド(この時点でR16はまだ)
+  version: 4
+  as_of: 2026-07-05        # この予想を立てた時点
+  stage: R16-partial       # R16-1,2 確定。R16-3以降が未消化
   model:
     axes: [strength, fatigue, home, suspension]   # strength = 市場価値とEloのブレンド
     strength_blend: { market_value: 0.48, elo: 0.52 }  # 相関ベース(stage rho: mv0.66 / elo0.71)
@@ -32,11 +32,12 @@ meta:
     - "v1: 地力+疲労+ホームでR16〜優勝を予想"
     - "v2: R32公式レッドに基づきBalogun(USA)のR16-6出場停止を反映(-0.20)。R16-6 USA→Belgium、QF-3がSpain vs Belgiumに。SF/決勝(France優勝)は不変。"
     - "v3: 地力に Elo(2026-07-01=グループ終了時, リーク/ネタバレなし)をブレンド(mv0.48/elo0.52)。R16-8 Switzerland→Colombia, SF-2 England→Argentina で決勝は France vs Argentina に。優勝は France(55%)で不変。"
+    - "v4: R16-1,2 の実結果を反映(確定)。Morocco 3-0 Canada, France 1-0 Paraguay(共に予想通り・90分決着・レッド0)。QF-1=Morocco vs France は不変、後段も変化なし。"
 
 predictions:
-  # --- R16 (実カード) ---
-  R16-1: { winner: Morocco,     p: 0.65 }   # Canada vs Morocco (Canadaは非ホーム@Houston)
-  R16-2: { winner: France,      p: 0.85 }   # Paraguay vs France
+  # --- R16 (実カード) ---   ※ 確定=実結果, それ以外は予想
+  R16-1: { winner: Morocco,     p: 1.0, result: "3-0", status: 確定 }   # Morocco 3-0 Canada (予想通り)
+  R16-2: { winner: France,      p: 1.0, result: "1-0", status: 確定 }   # France 1-0 Paraguay (予想通り)
   R16-3: { winner: Brazil,      p: 0.60 }   # Brazil vs Norway
   R16-4: { winner: England,     p: 0.53 }   # Mexico vs England (MexicoはElo高+ホーム+高地で接戦)
   R16-5: { winner: Spain,       p: 0.60 }   # Spain vs Portugal (SpainのElo最上位で差)

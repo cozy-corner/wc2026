@@ -1,5 +1,5 @@
 # FIFA World Cup 2026 — 決勝トーナメント(事実データのみ)
-# 状況: ラウンド16が出揃った時点 (2026-07-04)
+# 状況: R16-1,2 消化済み (2026-07-05時点。R16-3以降は未消化)
 # 予想は predictions.yaml に分離。このファイルは会場・日程・結果・組み合わせ等の事実のみ。
 # 更新手順: 実際の結果が出たら該当ラウンドに事実を追記 → predictions.yaml と予想スクリプトを更新。
 #
@@ -72,6 +72,8 @@ round_of_32:
 # ---------------------------------------------------------------------------
 # ラウンド16 (2026-07-04 〜 07-07)
 # 各試合に id を振り、QF以降は winner: で参照する
+# 結果は消化順に追記。未消化の試合には score 等を付けない。
+#   R16-1,2: 2026-07-04 消化済み(公式/ESPN)。R16全体でレッドは今のところ0枚。
 # ---------------------------------------------------------------------------
 round_of_16:
   - id: R16-1
@@ -80,6 +82,10 @@ round_of_16:
     venue: houston
     home: Canada
     away: Morocco
+    score: "3-0"              # Morocco 3-0 Canada (Ounahi 50', 82', Rahimi 90+8')
+    decided_by: regulation
+    minutes: 90
+    winner: Morocco
 
   - id: R16-2
     date: 2026-07-04
@@ -87,6 +93,10 @@ round_of_16:
     venue: philadelphia
     home: Paraguay
     away: France
+    score: "1-0"              # France 1-0 Paraguay (Mbappé 70' pen)
+    decided_by: regulation
+    minutes: 90
+    winner: France
 
   - id: R16-3
     date: 2026-07-05
