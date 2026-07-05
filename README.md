@@ -82,7 +82,10 @@
 
 ## スクリプト一覧
 - `fatigue.py` — R16各チームの累積疲労。
-- `strength_corr.py` — 市場価値 × 到達段階の相関。
+- `strength_corr.py` — 市場価値/Elo × 到達段階の相関(ブレンド重みの根拠)。
+- `blend.py` — 地力 = 市場価値 と Elo のブレンド(ln-valueスケール)。
 - `r32_compare.py` — R32結果 vs R32前疲労の比較。
 - `predict_r16.py` / `predict_qf.py` / `predict_sf.py` / `predict_final.py` — 各ラウンド予想。
+- `poisson.py` — 独立の得点レンズ。group+R32の得失点から相手補正した攻守レートを反復фитし、
+  Poissonで各カードのスコア分布・勝分負・想定スコアを出す(参考、本予想とは別)。
 - `inject_kickoffs.py` — 全試合にキックオフ現地時刻を注入(冪等)。
