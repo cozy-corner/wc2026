@@ -9,7 +9,7 @@
 |---|---|---|
 | `bracket.yaml` | 事実 | 会場マスタ(座標/標高/空調/7月気温湿度)、R32結果、R16〜決勝の組み合わせ・会場・日程・キックオフ、レッドカード |
 | `group_stage.yaml` | 事実 | 全12グループ・72試合の結果・順位・突破フラグ |
-| `strength.yaml` | 事実 | 全48チームの市場価値(Transfermarkt) |
+| `strength.yaml` | 事実 | 全48チームの地力: 市場価値(Transfermarkt) + Elo(eloratings.net) |
 | `suspensions.yaml` | 事実 | 公式カードに基づく出場停止(R16=R32レッド由来のみ) |
 | `predictions.yaml` | 予想 | R16〜優勝の予想。`meta.version` で世代管理。事実は上記を参照 |
 | `scripts/*.py` | ロジック | 疲労算出・相関・予想(R16→QF→SF→決勝) |
@@ -37,9 +37,12 @@
 - スクリプト側の変換表: `scripts/predict_qf.py` などの `ET_OFF`。
 - 暑熱は「日中平均最高気温 × 時刻の日周補正 × 湿度」で試合ごとに算出(空調会場は0)。
 
-### 市場価値(地力)
-- Transfermarkt のスカッド総市場価値。planetfootball.com 経由(2026-07-01時点)、givemesport でクロスチェック。
-- 到達段階との相関は `scripts/strength_corr.py`(Spearman rho≈0.66)。
+### 地力(市場価値 + Elo)
+- **市場価値**: Transfermarkt のスカッド総市場価値。planetfootball.com 経由(2026-07-01時点)、givemesport でクロスチェック。
+- **Elo**: World Football Elo(eloratings.net)。**リーク/ネタバレ回避のため、ノックアウト前のスナップショット**
+  (2026-07-01=グループ終了時、ライブ値はその後の試合を含むので不可)を Wayback Machine から取得。
+- 両者を標準化してブレンド(相関重み: 市場価値0.48 / Elo0.52)。到達段階との相関は
+  `scripts/strength_corr.py`(Spearman: 市場価値 rho≈0.66 / Elo rho≈0.71)。ブレンドは `scripts/blend.py`。
 
 ### カード・出場停止(公式のみ採用)
 - 出典: FIFA Match Centre / Wikipedia各試合(公式レポート)。ESPN等で補強。
@@ -61,7 +64,7 @@
 
 ## 予想モデル(要約)
 
-実効クオリティ `Q = ln(市場価値) − λ·疲労 + ホーム − 出場停止減点`、
+実効クオリティ `Q = 地力 − λ·疲労 + ホーム − 出場停止減点`(地力=市場価値とEloのブレンド)、
 勝率 `P = logistic((Qa−Qb)/T)`。パラメータは `predictions.yaml` の `meta.model`。
 - 疲労 = 初戦からの累積(各試合の 出場時間 × 時刻補正暑熱、標高[順応国は割引]、総移動、休養、
   2連勝で首位確定した場合の第3戦ローテ)。詳細 `scripts/fatigue.py`。

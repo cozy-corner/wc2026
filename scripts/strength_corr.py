@@ -50,6 +50,13 @@ stages = [d[2] for d in data]
 rho = pearson(ranks(vals), ranks(stages))
 print(f"Spearman順位相関 (市場価値 × 到達段階): rho = {rho:.3f}  (n=48)")
 
+# Elo(2026-07-01=グループ終了時)の相関も見て、ブレンド重みを決める
+elos = [S[t]["elo"] for t in all_teams]
+rho_elo = pearson(ranks(elos), ranks(stages))
+print(f"Spearman順位相関 (Elo    × 到達段階): rho = {rho_elo:.3f}  (n=48)")
+w_mv, w_elo = rho / (rho + rho_elo), rho_elo / (rho + rho_elo)
+print(f"相関ベースの推奨ブレンド重み → 市場価値 {w_mv:.2f} / Elo {w_elo:.2f}\n")
+
 # 段階別の平均・中央値市場価値
 for st, name in [(2, "R16進出"), (1, "R32敗退"), (0, "グループ敗退")]:
     vs = sorted(d[1] for d in data if d[2] == st)

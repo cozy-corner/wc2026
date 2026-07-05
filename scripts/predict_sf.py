@@ -16,6 +16,9 @@ hav, heat, alt = ns["haversine"], ns["heat_stress"], ns["alt_stress"]
 gmatches, clinched, ROT = ns["group_matches"], ns["clinched_first_after2"], ns["ROT_FACTOR"]
 ACCL = ns["ACCLIMATIZED"]
 S = yaml.safe_load(open("strength.yaml"))["strength"]
+_b = {}
+exec(open("scripts/blend.py").read(), _b)
+STRENGTH = _b["build_strength"](S)   # 地力 = ln市場価値 と Elo のブレンド
 
 LAMBDA, T, HOME, HOME_ALT = 0.6, 1.3, 0.45, 0.5
 HOME_COUNTRY = {"Mexico": "Mexico", "USA": "USA", "Canada": "Canada"}
@@ -99,7 +102,7 @@ def home_bonus(team, opp, venue):
     return HOME + (HOME_ALT if v["elevation_m"] > 1500 and opp not in ACCL else 0.0)
 
 def Q(t, o, v):
-    return math.log(S[t]["market_value_eur_m"]) - LAMBDA * fat[t] + home_bonus(t, o, v)
+    return STRENGTH[t] - LAMBDA * fat[t] + home_bonus(t, o, v)
 
 def logistic(x):
     return 1 / (1 + math.exp(-x))

@@ -22,6 +22,9 @@ SUSP = 0.20      # 主力先発1枚の出場停止によるQ減点
 B = yaml.safe_load(open("bracket.yaml"))
 S = yaml.safe_load(open("strength.yaml"))["strength"]
 V = B["venues"]
+_b = {}
+exec(open("scripts/blend.py").read(), _b)
+STRENGTH = _b["build_strength"](S)   # 地力 = ln市場価値 と Elo のブレンド
 
 # 出場停止(事実) → 該当試合で該当チームを減点。roleがstarterのみ計上。
 susp_by_match = {}
@@ -52,7 +55,7 @@ FAT = {r["team"]: r["score"] for r in ns["rows"]}
 HOSTS = {"Mexico", "USA", "Canada"}  # 開催国(モデル外の補正候補として注記)
 
 def Q(team):
-    return math.log(S[team]["market_value_eur_m"]) - LAMBDA * FAT[team]
+    return STRENGTH[team] - LAMBDA * FAT[team]
 
 def logistic(x):
     return 1 / (1 + math.exp(-x))

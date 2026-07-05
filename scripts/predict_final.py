@@ -14,6 +14,9 @@ B, V = ns["B"], ns["V"]
 hav, heat, alt = ns["haversine"], ns["heat_stress"], ns["alt_stress"]
 gmatches, clinched, ROT = ns["group_matches"], ns["clinched_first_after2"], ns["ROT_FACTOR"]
 S = yaml.safe_load(open("strength.yaml"))["strength"]
+_b = {}
+exec(open("scripts/blend.py").read(), _b)
+STRENGTH = _b["build_strength"](S)   # 地力 = ln市場価値 と Elo のブレンド
 
 LAMBDA, T = 0.6, 1.3
 ET_OFF = {"houston": -1, "philadelphia": 0, "new_jersey": 0, "mexico_city": -2,
@@ -71,7 +74,7 @@ Bt = P["SF-2"]["winner"]  # SF-2勝者
 accA, accB = accumulate(A), accumulate(Bt)
 
 def Q(acc):
-    return math.log(S[acc["team"]]["market_value_eur_m"]) - LAMBDA * acc["fatigue"]
+    return STRENGTH[acc["team"]] - LAMBDA * acc["fatigue"]
 
 pa = 1 / (1 + math.exp(-(Q(accA) - Q(accB)) / T))
 win, p = (A, pa) if pa >= 0.5 else (Bt, 1 - pa)
