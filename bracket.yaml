@@ -1,5 +1,5 @@
 # FIFA World Cup 2026 — 決勝トーナメント(事実データのみ)
-# 状況: R16-1,2 消化済み (2026-07-05時点。R16-3以降は未消化)
+# 状況: R16-1〜4 消化済み (2026-07-06時点。R16-5以降は未消化)
 # 予想は predictions.yaml に分離。このファイルは会場・日程・結果・組み合わせ等の事実のみ。
 # 更新手順: 実際の結果が出たら該当ラウンドに事実を追記 → predictions.yaml と予想スクリプトを更新。
 #
@@ -73,7 +73,8 @@ round_of_32:
 # ラウンド16 (2026-07-04 〜 07-07)
 # 各試合に id を振り、QF以降は winner: で参照する
 # 結果は消化順に追記。未消化の試合には score 等を付けない。
-#   R16-1,2: 2026-07-04 消化済み(公式/ESPN)。R16全体でレッドは今のところ0枚。
+#   R16-1〜4 消化済み(公式/ESPN/Al Jazeera)。R16-3はNorwayがBrazilを撃破(番狂わせ)。
+#   R16-4でQuansah(England)が54'一発退場 → 次戦QF-2出場停止(suspensions.yaml)。
 # ---------------------------------------------------------------------------
 round_of_16:
   - id: R16-1
@@ -104,6 +105,10 @@ round_of_16:
     venue: new_jersey
     home: Brazil
     away: Norway
+    score: "1-2"              # Norway 2-1 Brazil (Haaland 79', 84'; Neymar 90+5' pen)
+    decided_by: regulation
+    minutes: 90
+    winner: Norway
 
   - id: R16-4
     date: 2026-07-05
@@ -111,6 +116,11 @@ round_of_16:
     venue: mexico_city
     home: Mexico
     away: England
+    score: "2-3"              # England 3-2 Mexico (Bellingham 2, Kane pen; Quiñones, Jiménez pen)
+    decided_by: regulation
+    minutes: 90
+    winner: England
+    red_cards: [{ player: "Jarell Quansah", team: England, minute: 54, type: straight }]  # → QF-2出場停止
 
   - id: R16-5
     date: 2026-07-06
