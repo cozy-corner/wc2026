@@ -1,5 +1,5 @@
 # FIFA World Cup 2026 — 決勝トーナメント(事実データのみ)
-# 状況: R16-1〜4 消化済み (2026-07-06時点。R16-5以降は未消化)
+# 状況: R16 全8試合 消化済み (2026-07-08時点。ベスト8確定。QF以降は未消化)
 # 予想は predictions.yaml に分離。このファイルは会場・日程・結果・組み合わせ等の事実のみ。
 # 更新手順: 実際の結果が出たら該当ラウンドに事実を追記 → predictions.yaml と予想スクリプトを更新。
 #
@@ -73,8 +73,9 @@ round_of_32:
 # ラウンド16 (2026-07-04 〜 07-07)
 # 各試合に id を振り、QF以降は winner: で参照する
 # 結果は消化順に追記。未消化の試合には score 等を付けない。
-#   R16-1〜4 消化済み(公式/ESPN/Al Jazeera)。R16-3はNorwayがBrazilを撃破(番狂わせ)。
-#   R16-4でQuansah(England)が54'一発退場 → 次戦QF-2出場停止(suspensions.yaml)。
+#   R16 全8試合 消化済み(公式/ESPN/Al Jazeera 等)。番狂わせは R16-3(Norway>Brazil)と
+#   R16-8(Switzerland>Colombia, PK)。レッドは R16-4 Quansah(England)の1枚のみ(→QF-2停止)。
+#   ベスト8: Morocco, France, Norway, England, Spain, Belgium, Argentina, Switzerland。
 # ---------------------------------------------------------------------------
 round_of_16:
   - id: R16-1
@@ -128,6 +129,10 @@ round_of_16:
     venue: arlington
     home: Spain
     away: Portugal
+    score: "1-0"              # Spain 1-0 Portugal (Merino 90+1')
+    decided_by: regulation
+    minutes: 90
+    winner: Spain
 
   - id: R16-6
     date: 2026-07-06
@@ -135,6 +140,10 @@ round_of_16:
     venue: seattle
     home: Belgium
     away: USA
+    score: "4-1"              # Belgium 4-1 USA (De Ketelaere 2, Vanaken, Lukaku; Tillman)
+    decided_by: regulation
+    minutes: 90
+    winner: Belgium
 
   - id: R16-7
     date: 2026-07-07
@@ -142,6 +151,10 @@ round_of_16:
     venue: atlanta
     home: Egypt
     away: Argentina
+    score: "2-3"              # Argentina 3-2 Egypt (Romero 79', Messi 83', E.Fernández 90+2'; Ibrahim 15', Zico 67')
+    decided_by: regulation
+    minutes: 90
+    winner: Argentina
 
   - id: R16-8
     date: 2026-07-07
@@ -149,6 +162,10 @@ round_of_16:
     venue: vancouver
     home: Switzerland
     away: Colombia
+    score: "0-0 (pens 4-3)"   # Switzerland 0-0 Colombia, PK 4-3 (Vargas 決勝PK, Kobel が Cucho を止める)
+    decided_by: penalties
+    minutes: 120
+    winner: Switzerland
 
 # ---------------------------------------------------------------------------
 # 準々決勝 (2026-07-09 〜 07-11) — 会場・日程はFIFA日程で確定済み

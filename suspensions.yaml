@@ -7,13 +7,13 @@
 # R16でもレッドが発生: R16-4 Quansah(England)。次戦QF-2出場停止。
 #   misses: 出場停止となる試合id (bracket.yaml)
 #   role: starter=先発常連(実効戦力→-0.20) / squad=控え(直接の代役あり=実質減点なし)
+#
+# 【取り消し】Balogun(USA, R32 vs Bosnia 64' ストレートレッド → 当初R16-6出場停止):
+#   FIFAが懲戒規程Article 27に基づき出場停止の適用を停止、Belgium側の異議申立ても棄却。
+#   → R16-6(Belgium戦)に出場可(先発)、1年間の保護観察付き。出典: CBS News/CNBC/Yahoo/CBS Sports(2026-07-05)。
+#   よって出場停止リストからは除外(R16-6のUSAへの-0.20減点なし)。
 
 suspensions:
-  - player: Folarin Balogun
-    team: USA
-    role: starter
-    reason: red_card         # R32 vs Bosnia 64' ストレートレッド
-    misses: R16-6            # Belgium vs USA
   - player: Jarell Quansah
     team: England
     role: squad              # R16-4はSpenceに代えて先発。QF-2はSpenceが本来の先発で復帰=実効戦力の損失ほぼ無し

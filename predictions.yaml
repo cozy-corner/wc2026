@@ -13,9 +13,9 @@
 # バージョン: ラウンドが進む/モデルを変えるたびに version を +1 し、
 #   as_of・stage・確定済み予想を更新する。過去世代は git 履歴で辿れる。
 meta:
-  version: 5
-  as_of: 2026-07-06        # この予想を立てた時点
-  stage: R16-partial       # R16-1〜4 確定。R16-5以降が未消化
+  version: 7
+  as_of: 2026-07-08        # この予想を立てた時点
+  stage: pre-QF            # R16 全8試合 確定。ベスト8確定。QF以降が未消化
   model:
     axes: [strength, fatigue, home, suspension]   # strength = 市場価値とEloのブレンド
     strength_blend: { market_value: 0.48, elo: 0.52 }  # 相関ベース(stage rho: mv0.66 / elo0.71)
@@ -34,6 +34,8 @@ meta:
     - "v3: 地力に Elo(2026-07-01=グループ終了時, リーク/ネタバレなし)をブレンド(mv0.48/elo0.52)。R16-8 Switzerland→Colombia, SF-2 England→Argentina で決勝は France vs Argentina に。優勝は France(55%)で不変。"
     - "v4: R16-1,2 の実結果を反映(確定)。Morocco 3-0 Canada, France 1-0 Paraguay(共に予想通り・90分決着・レッド0)。QF-1=Morocco vs France は不変、後段も変化なし。"
     - "v5: R16-3,4 の実結果を反映(確定)。Norway 2-1 Brazil(番狂わせ・予想はBrazil60%), England 3-2 Mexico(予想通り)。QF-2 が Norway vs England に変わりEngland優位が拡大(53%→63%)。R16-4 Quansah(England)退場→QF-2出場停止だがSpence復帰で実効減点なし。SF/決勝(France優勝55%)は不変。"
+    - "v6: 事実修正。Balogun(USA)のR16-6出場停止がFIFA(Article 27)により取消・Belgium異議も棄却→出場可。R16-6の-0.20減点を撤回し Belgium 54%→51%(予想勝者は不変)。QF-3以降も不変。(注: R16-5=Spain 1-0 Portugal 確定は別途bracketに反映予定)"
+    - "v7: R16-5〜8 の実結果を反映(確定)。Spain 1-0 Portugal, Belgium 4-1 USA, Argentina 3-2 Egypt(2点差逆転)は予想通り。R16-8 Switzerland 0-0 Colombia(PK4-3)は番狂わせ(予想Colombia51%)。ベスト8確定・R16は7/8的中(外したのはR16-3とR16-8)。QF-4が Argentina vs Switzerland に変わる(Argentina72%)。SF/決勝(France優勝55%, 相手Argentina)は不変。"
 
 predictions:
   # --- R16 (実カード) ---   ※ 確定=実結果, それ以外は予想
@@ -41,16 +43,16 @@ predictions:
   R16-2: { winner: France,      p: 1.0, result: "1-0", status: 確定 }   # France 1-0 Paraguay (予想通り)
   R16-3: { winner: Norway,      p: 1.0, result: "2-1", status: 確定 }   # Norway 2-1 Brazil (番狂わせ・Haaland2発)
   R16-4: { winner: England,     p: 1.0, result: "3-2", status: 確定 }   # England 3-2 Mexico (予想通り・Quansah退場)
-  R16-5: { winner: Spain,       p: 0.60 }   # Spain vs Portugal (SpainのElo最上位で差)
-  R16-6: { winner: Belgium,     p: 0.54 }   # Belgium vs USA (Balogun停止+USAはElo低め)
-  R16-7: { winner: Argentina,   p: 0.86 }   # Egypt vs Argentina (ArgentinaはElo#1)
-  R16-8: { winner: Colombia,    p: 0.51 }   # Switzerland vs Colombia (ColombiaのElo#6が疲労を上回り反転)
+  R16-5: { winner: Spain,       p: 1.0, result: "1-0", status: 確定 }   # Spain 1-0 Portugal (予想通り)
+  R16-6: { winner: Belgium,     p: 1.0, result: "4-1", status: 確定 }   # Belgium 4-1 USA (予想通り・Balogun出場も完敗)
+  R16-7: { winner: Argentina,   p: 1.0, result: "3-2", status: 確定 }   # Argentina 3-2 Egypt (予想通り・2点差逆転)
+  R16-8: { winner: Switzerland, p: 1.0, result: "0-0 p4-3", status: 確定 }   # Switzerland PK勝ち (番狂わせ・予想はColombia51%)
 
   # --- QF (予想カード) ---
   QF-1: { winner: France,    p: 0.76 }   # Morocco vs France
   QF-2: { winner: England,   p: 0.63 }   # Norway vs England (R16-3番狂わせでNorwayに交代。地力差でEngland優位)
   QF-3: { winner: Spain,     p: 0.72 }   # Spain vs Belgium (SpainのElo最上位)
-  QF-4: { winner: Argentina, p: 0.71 }   # Argentina vs Colombia (R16-8がEloでColombiaに)
+  QF-4: { winner: Argentina, p: 0.72 }   # Argentina vs Switzerland (R16-8番狂わせでSwitzerlandに交代)
 
   # --- SF (予想カード) ---
   SF-1: { winner: France,    p: 0.53 }   # France vs Spain (SpainのElo最上位でほぼ互角)
