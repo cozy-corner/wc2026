@@ -1,5 +1,5 @@
 # FIFA World Cup 2026 — 決勝トーナメント(事実データのみ)
-# 状況: R16 全8試合 消化済み (2026-07-08時点。ベスト8確定。QF以降は未消化)
+# 状況: QF-1 消化済み (2026-07-10時点。France 2-0 Morocco。QF-2,3,4は未消化)
 # 予想は predictions.yaml に分離。このファイルは会場・日程・結果・組み合わせ等の事実のみ。
 # 更新手順: 実際の結果が出たら該当ラウンドに事実を追記 → predictions.yaml と予想スクリプトを更新。
 #
@@ -176,8 +176,12 @@ quarterfinals:
     date: 2026-07-09
     kickoff_et: "16:00"
     venue: boston
-    home: { winner: R16-1 }   # Canada/Morocco
-    away: { winner: R16-2 }   # Paraguay/France
+    home: { winner: R16-1 }   # Morocco
+    away: { winner: R16-2 }   # France
+    score: "0-2"              # France 2-0 Morocco (Mbappé 60', Dembélé 66'). Mbappéは足首痛で早期交代
+    decided_by: regulation
+    minutes: 90
+    winner: France
   - id: QF-2          # M99
     date: 2026-07-11
     kickoff_et: "17:00"
