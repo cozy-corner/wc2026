@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""SF(準決勝)予想 — QFまでの疲労を引き継ぐ。R16/QFは延長なし(90分)前提。
+"""SF(準決勝)予想 — QFまでの疲労を引き継ぐ。R16/QFは実出場分(bracketのminutes, 延長込み)を使う。
 
 SFの組は予想QF勝者で決まる。各SF出場4チームの
 group(3)+R32+R16+QF の累積疲労 + SF会場までの移動 + SF前休養 を算出し、
@@ -60,9 +60,9 @@ def accumulate(team, sf_venue, sf_date):
     r32 = r32_by_team[team]
     stages.append((r32["venue"], r32["minutes"], r32["kickoff_local"]))
     r16 = r16_by_team[team]
-    stages.append((r16["venue"], 90, et_to_local(r16["kickoff_et"], r16["venue"])))
+    stages.append((r16["venue"], r16.get("minutes", 90), et_to_local(r16["kickoff_et"], r16["venue"])))
     qf = qf_by_team[team]
-    stages.append((qf["venue"], 90, et_to_local(qf["kickoff_et"], qf["venue"])))
+    stages.append((qf["venue"], qf.get("minutes", 90), et_to_local(qf["kickoff_et"], qf["venue"])))
     for v, mn, ko in stages:
         h += heat(v, ko) * (mn / 90)
         a += alt(v, team) * (mn / 90)
@@ -107,7 +107,7 @@ def Q(t, o, v):
 def logistic(x):
     return 1 / (1 + math.exp(-x))
 
-print(f"パラメータ: λ={LAMBDA}, T={T}  (R16/QF延長なし=90分, SF会場は空調)\n")
+print(f"パラメータ: λ={LAMBDA}, T={T}  (R16/QFは実出場分=延長込み, SF会場は空調)\n")
 winners = []
 for s in SF:
     a, b, v = s["a"], s["b"], s["venue"]

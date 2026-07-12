@@ -1,5 +1,5 @@
 # FIFA World Cup 2026 — 決勝トーナメント(事実データのみ)
-# 状況: QF-1,3 消化済み (2026-07-11時点。France, Spain がSF進出。QF-2,4は未消化)
+# 状況: QF 全4試合 消化済み (2026-07-12時点。ベスト4=France,Spain,England,Argentina。SF以降は未消化)
 # 予想は predictions.yaml に分離。このファイルは会場・日程・結果・組み合わせ等の事実のみ。
 # 更新手順: 実際の結果が出たら該当ラウンドに事実を追記 → predictions.yaml と予想スクリプトを更新。
 #
@@ -186,8 +186,12 @@ quarterfinals:
     date: 2026-07-11
     kickoff_et: "17:00"
     venue: miami
-    home: { winner: R16-3 }   # Brazil/Norway
-    away: { winner: R16-4 }   # Mexico/England
+    home: { winner: R16-3 }   # Norway
+    away: { winner: R16-4 }   # England
+    score: "1-2 (a.e.t.)"     # England 2-1 Norway 延長 (Bellingham 45+2', 93'; Schjelderup 36')
+    decided_by: extra_time
+    minutes: 120
+    winner: England
   - id: QF-3          # M98
     date: 2026-07-10
     kickoff_et: "15:00"
@@ -202,8 +206,13 @@ quarterfinals:
     date: 2026-07-11
     kickoff_et: "21:00"
     venue: kansas_city
-    home: { winner: R16-7 }   # Egypt/Argentina
-    away: { winner: R16-8 }   # Switzerland/Colombia
+    home: { winner: R16-7 }   # Argentina
+    away: { winner: R16-8 }   # Switzerland
+    score: "3-1 (a.e.t.)"     # Argentina 3-1 Switzerland 延長 (Mac Allister 10', J.Álvarez 112', Lautaro 120+1'; Ndoye 67')
+    decided_by: extra_time
+    minutes: 120
+    winner: Argentina
+    red_cards: [{ player: "Breel Embolo", team: Switzerland, minute: 72, type: second_yellow }]  # Switzerlandは敗退のため停止影響なし
 
 # ---------------------------------------------------------------------------
 # 準決勝 (2026-07-14 〜 07-15) — 両会場とも開閉式屋根+空調

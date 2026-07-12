@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""決勝予想 — SFまでの疲労を引き継ぐ。R16/QF/SFは延長なし(90分)前提。
+"""決勝予想 — SFまでの疲労を引き継ぐ。R16/QF/SFは実出場分(bracketのminutes, 延長込み)を使う。SF未消化時は90分。
 
 決勝カードは予想SF勝者で決まる。2チームだけなので min-max 正規化は使わず、
 大会全体の高値を基準にした固定分母でスケール(効果は従来round同等になるよう設定)。
@@ -55,7 +55,7 @@ def accumulate(team):
     r32 = r32_by_team[team]
     stages = [(r32["venue"], r32["minutes"], r32["kickoff_local"])]
     for st in (r16_by_team[team], qf_by_team[team], sf_by_team[team]):
-        stages.append((st["venue"], 90, et_to_local(st["kickoff_et"], st["venue"])))
+        stages.append((st["venue"], st.get("minutes", 90), et_to_local(st["kickoff_et"], st["venue"])))
     for v, mn, ko in stages:
         h += heat(v, ko) * (mn / 90)
         a += alt(v, team) * (mn / 90)
