@@ -1,5 +1,5 @@
 # FIFA World Cup 2026 — 決勝トーナメント(事実データのみ)
-# 状況: QF 全4試合 消化済み (2026-07-12時点。ベスト4=France,Spain,England,Argentina。SF以降は未消化)
+# 状況: SF-1 消化済み (2026-07-15時点。Spain 2-0 France でSpainが決勝進出。SF-2は未消化)
 # 予想は predictions.yaml に分離。このファイルは会場・日程・結果・組み合わせ等の事実のみ。
 # 更新手順: 実際の結果が出たら該当ラウンドに事実を追記 → predictions.yaml と予想スクリプトを更新。
 #
@@ -223,8 +223,12 @@ semifinals:
     date: 2026-07-14
     kickoff_et: "15:00"
     venue: arlington
-    home: { winner: QF-1 }    # Boston QF勝者
-    away: { winner: QF-3 }    # Los Angeles QF勝者
+    home: { winner: QF-1 }    # France
+    away: { winner: QF-3 }    # Spain
+    score: "0-2"              # Spain 2-0 France (Oyarzabal 22'pen, Pedro Porro 58')
+    decided_by: regulation
+    minutes: 90
+    winner: Spain
   - id: SF-2          # M102
     date: 2026-07-15
     kickoff_et: "15:00"

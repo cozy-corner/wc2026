@@ -13,9 +13,9 @@
 # バージョン: ラウンドが進む/モデルを変えるたびに version を +1 し、
 #   as_of・stage・確定済み予想を更新する。過去世代は git 履歴で辿れる。
 meta:
-  version: 11
-  as_of: 2026-07-12        # この予想を立てた時点
-  stage: pre-SF            # QF 全4試合 確定。ベスト4確定。SF以降が未消化
+  version: 12
+  as_of: 2026-07-15        # この予想を立てた時点
+  stage: SF-partial        # SF-1 確定(Spain進出)。SF-2が未消化
   model:
     axes: [strength, fatigue, home, suspension]   # strength = 市場価値とEloのブレンド
     strength_blend: { market_value: 0.48, elo: 0.52 }  # 相関ベース(stage rho: mv0.66 / elo0.71)
@@ -40,6 +40,7 @@ meta:
     - "v9: QF-3 の実結果を反映(確定)。Spain 2-1 Belgium(予想通り, 90分決着・レッド0, Merino 88'決勝)。Spain はSF-1へ。SF-1=France vs Spain 確定カードに(予想France53%)。SF/決勝(France優勝55%, 相手Argentina)は不変。"
     - "v10: QF-2,4 の実結果を反映(確定)。England 2-1 Norway(延長), Argentina 3-1 Switzerland(延長)ともに予想通り。ベスト4=France,Spain,England,Argentina。SF-2=England vs Argentina 確定カードに(予想Argentina58%)。QF-4でEmbolo(Switzerland)が2枚目退場だが敗退のため影響なし。SF/決勝(France優勝55%)は不変。"
     - "v11: モデル改良。SF/決勝の疲労計算をQF/R16=90分固定から bracketの実minutes参照(延長込み)に変更(predict_sf.py, predict_final.py)。England/Argentinaの延長120分が反映され、決勝でArgentinaの疲労がFranceと同水準に(従来はArgentinaがやや軽め0.497→0.515)。SF(France53%/Argentina58%)・優勝(France55%)の順位は不変。※予想段階のR16/QF(predict_r16/qf)は従来どおり90分前提(消化前は延長不明のため)。"
+    - "v12: SF-1 の実結果を反映(確定)。Spain 2-0 France(番狂わせ・予想France53%, 90分決着・レッド0)。大会通じて本命だったFranceが敗退し、Spainが決勝進出。決勝カードが Spain vs (SF-2勝者=予想Argentina) に変わり、優勝予想は France55% → Spain53%(相手Argentina47%)に交代。SF-2(England vs Argentina, 予想Argentina58%)は未消化。"
 
 predictions:
   # --- R16 (実カード) ---   ※ 確定=実結果, それ以外は予想
@@ -58,9 +59,9 @@ predictions:
   QF-3: { winner: Spain,     p: 1.0, result: "2-1", status: 確定 }   # Spain 2-1 Belgium (予想通り)
   QF-4: { winner: Argentina, p: 1.0, result: "3-1 a.e.t.", status: 確定 }   # Argentina 3-1 Switzerland 延長 (予想通り)
 
-  # --- SF (予想カード) ---
-  SF-1: { winner: France,    p: 0.53 }   # France vs Spain (SpainのElo最上位でほぼ互角)
+  # --- SF (実カード) ---   ※ 確定=実結果, それ以外は予想
+  SF-1: { winner: Spain,     p: 1.0, result: "2-0", status: 確定 }   # Spain 2-0 France (番狂わせ・予想France53%)
   SF-2: { winner: Argentina, p: 0.58 }   # England vs Argentina (ArgentinaのElo#1+低疲労で反転)
 
   # --- 決勝 ---
-  FINAL: { winner: France, p: 0.55, runner_up: Argentina }   # France vs Argentina
+  FINAL: { winner: Spain, p: 0.53, runner_up: Argentina }   # Spain vs Argentina (SF-1でFrance敗退。相手はSF-2予想勝者)
